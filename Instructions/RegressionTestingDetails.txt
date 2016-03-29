@@ -1,0 +1,64 @@
+7) Excercise Regression Tesing Details
+
+   manager.c, especially MyTest (Place_Order) of TestCaseBuildingModuleA
+
+   a) MyTest2:
+
+      Test->Scripting->Export Script: MyTest must be selected.
+      Open MyTest.tst with editor under MyTest2.tst:
+
+      Place_Order:
+      Order.Entree = STEAK
+      
+      Update_Table_Record:
+      check_total == 14.0
+
+      Test->Scripting->Import: MyTest2.tst
+      Notice: Automatic renaming of test case name.
+
+      Delete MyTest.002.
+      Edit MyTest2.tst:
+      TEST.NAME = MyTest2
+
+      Test->Scripting->Import: MyTest2.tst
+      Notice: No log error.
+
+   b) MyTest3:
+
+      Open MyTest.tst with editor under MyTest3.tst:
+
+      TEST.NAME = MyTest3
+
+      Place_Order:   
+      Order.Entree = TURKEY
+      
+      Update_Table_Record:
+      check_total == 18.0
+
+      Test->Scripting->Import: MyTest3.tst
+      Notice: Out of range error for Order.Entree.
+      Run: Fails with check_total == 0.
+      
+      Delete MyTest3.
+      Tools->Options->Execute: Strict test case importing
+      Test->Scripting->Import: MyTest3.tst
+      Notice: Immediately marked as failed.
+      Run: Invalid test.
+
+      Edit MyTest3.tst:
+
+      TEST.REPLACE
+
+      Place_Order:   
+      Order.Entree = TURKEY
+
+      Test->Scripting->Import: MyTest3.tst
+      Notice: No log error.
+
+   c) Environment->Create Regression Scripts:
+
+      New directory Regression.
+      Execute bat file.
+      Compare Test Case Management Report of project with that in Regression.
+      Note: Differences in the reports might show up
+      	    if not all test cases have been run instrumented.
