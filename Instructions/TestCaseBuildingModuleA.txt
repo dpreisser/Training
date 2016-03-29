@@ -1,0 +1,52 @@
+1) Excercise Test Case Building Module A
+
+   manager.c:
+
+   a) MyTest:
+
+      Place_Order:
+      Table = 1, Seat = 0, Order.Entree = Chicken
+
+      Update_Table_Record:
+      Table == 1, check_total == 10.0.
+
+      Show out of range with Order.entree = 5.
+
+      Purpose: First Unit Test for Place_Order.
+
+   b) Cov_Place_Order:
+
+      Place_Order:
+      Loop over the Order.entree choices: range input (properties).
+
+      Update_Table_Record:
+      List of different check_totals (manual).
+			  
+      Purpose: Code coverage of Place_Order.
+
+   c) Cov_Place_Dessert:
+
+      Place_Order:
+      Order.Salad = 3 x Caesar, 3 x Green.
+      Order.Beverage = 3 x Mixed_Drink, 3 x Wine.
+
+      Purpose: Coverage of Add_Included_Dessert and of Place_Order.
+
+   d) FoolTheBill:
+
+      Place_Order:
+      Table = 1, Seat = 0, Order.Entree = Chicken
+
+      Enable SBF for Add_Included_Dessert.
+
+      Add_Included_Dessert:
+      Order[0].Entree = Lobser
+
+      Update_Table_Record:
+      Table == 1 check_total = 10.0 Order[0].Entree == Lobster
+
+      Purpose: Get the lobster for the price of a chicken.
+      Problem with data consistency in code.
+		   
+		   
+

@@ -1,0 +1,47 @@
+2) Excercise Test Case Building B
+
+   float_example.c
+
+   a) floatTest.001:
+
+      floatTest:
+      Param = 1.2e2, return == 120.0
+
+   b) floatTest.002:
+
+      floatTest:
+      Param = 1.0..1.4/0.1, return == 1.2+/-20%
+
+   c) floatTest.003:
+
+      floatTest:
+      Param = <MIN>>,<<MID>,<<MAX>, return == <MIN>>,0.0,<<MAX>
+
+      Comment: Expected value <<MID> not working.
+
+   d) floatTest.004:
+
+      floatTest:
+      Param = <<POS_INF>>,<<NEG_INF>>,<<NAN>>, return == <<POS_INF>>,<<NEG_INF>>,<<NAN>>
+
+   e) floatTest.005:
+
+      floatTest:
+      Param = <<MIN-1>>,<<MAX+1>>, return == <<MIN>>,<<MAX>>
+
+   f) getOrder.001:
+
+      getOrder:
+      index = 0..3/1
+      return.Soup == No_Soup
+      return.Salad == Caesar
+      return.Entree == Steak..Pasta/1
+      return.Beverage == Mixed_Drink
+
+      <<GLOBAL>>:
+      OrderArray[0].Entree = Steak
+      OrderArray[0].Entree = Chicken
+      OrderArray[0].Entree = Lobster
+      OrderArray[0].Entree = Pasta
+
+      Remainder stays the same. Cut & Paste.

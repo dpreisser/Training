@@ -1,0 +1,31 @@
+4) Excercise Test Case Building Module D
+
+   dishwasher_fsm.c
+
+   a) Follow the instructions for white box:
+
+      Can use static functions which would not be accessible.
+
+      Initialisation Tests:
+      PowerOn:
+      powerOn = 1
+
+      Compound Test Case <<COMPOUND>>.001:
+      processIdleState.001
+      processWashCycle.001
+      processRinseCycle.001
+      processDryCycle.001
+
+   b) processRinseCycle.002:
+      
+      processRinseCycle:
+      event = EVENT_START_DRY
+      return == STS_NO_HEAT
+
+      SBF:
+      checkHeatElement:
+      return = STS_NO_HEAT
+
+   c) Follow the instructions for black box:
+
+      Achieve the same by only using public functions.
