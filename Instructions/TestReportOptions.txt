@@ -1,0 +1,46 @@
+6) excercise Test Report and Options
+
+   airport.c
+
+   a) IntToText.001:
+
+      IntToText:
+      value = 100
+      return == 100
+
+      Choose different options:
+      Show only data with expected results
+      Show only events with expected results
+
+      Put dir in Tools->Options->Report: File version command.
+
+   b) LogBoardingPas.001:
+
+      LogBoardingPass:
+      message = "Hallo Wowereit\n. Wo ist mein Flughafen?"
+
+      Choose Tools->Options->Execute: Redirect standard output.
+
+   c) BoardingPassAddFlight.001:
+
+      BoardingPassAddFlight:
+      info.from == BOS
+      info.to == BOS
+      info.flightNumber == 0
+
+   d) Play with different report settings.
+      This can be demonstrated for example with TestCaseBuildingModuleD.
+
+      Notes:
+
+      Test Case Data: Only dependent on test case selection.
+      Execution Results: Only dependent on test case selection.
+
+      For metrics to appear only for the selected (ticked) test cases:
+      - Untick "Allways use all results in reports" (Test->View).
+      - Tick only the test cases you want to appear in metrics.
+
+      Coverage only appears for the slected (ticked) test cases.
+      "Allways use all results in reports" doesn't have any influence.
+
+      Testcase Management can not be influenced.
