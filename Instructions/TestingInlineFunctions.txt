@@ -1,0 +1,18 @@
+9) Excercise Testing Inline Functions
+
+   inline.cpp
+
+   Tools->Options->Coverage: Provide code coverage in header files
+
+   a) inline (uut):
+   
+      Insert Basis Path Test Cases.
+
+      Note: See that not all statements have been covered in Test Case Management Report.
+
+   b) Tools->Options->Builder: Test all member inline functions
+      			       Test all non-member inline functions
+
+      Insert Basis Path Test Cases for the new functions visible.
+
+      Note: All statements have been covered in Test Case Management Report.

@@ -1,0 +1,63 @@
+8) Excercise Testing C++ Classes
+
+   shapes.cpp
+   combo.cpp
+
+   a) Rectangle:
+
+      Rectangle::Rectangle( ... )
+      x = 2, y = 3, height = 4, width = 5
+
+      Rectangle:
+      mX == 2, mY == 3, mHeight == 4, mWidth == 5
+
+   b) SEGFLT:
+
+      Rectangle::getArea:
+      return == 20.0
+
+   c) Normal:
+
+      <<GLOBAL>>:
+      Rectangle Instance:
+      Rectangle::Rectangle( ... )
+      x = 2, y = 3, height = 4, width = 5
+
+      Rectangle::getArea:
+      return == 20.0
+
+   c) Default:
+
+      <<GLOBAL>>:
+      Rectangle Instance:
+      Rectangle::Rectangle()
+      mX = 2, mY = 3, mHeight = 4, mWidth = 5
+
+      Rectangle::getArea:
+      return == 20.0
+
+   e) Init.001:
+
+      <<GLOBAL>>:
+      Rectangle Instance:
+      Rectangle::Rectangle( ... )
+      x = 2, y = 3, height = 4, width = 5
+
+      Rectangle::getArea_I:
+      return == 20.0
+
+      Rectangle::getX_I:
+      return == 2
+
+   f) <<COMPOUND>>.001
+      
+      <<GLOBAL>>:
+      Rectangle Instance:
+      Rectangle::Rectangle( ... )
+      x = 2, y = 3, height = 4, width = 5
+
+      Rectangle::getArea_C:
+      return == 20.0
+
+      Rectangle::getY_C:
+      return == 3
