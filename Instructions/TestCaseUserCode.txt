@@ -1,0 +1,58 @@
+10) Excercise Test Case User Code
+
+    io_wrapper.c
+
+    a) <<COMPOUND>>:
+       Write_File:
+
+       Open_Write:
+       
+       OpenFile:
+       filename = TestOutput.txt, mode = F_WRITE
+
+       Write:
+
+       WriteString:
+       fp = <io_wrapper.OpenFile.return>
+       line = Hallo Wowereit\n Wo ist mein Flughafen?
+       return == True
+
+       Close_Write:
+
+       CloseFile:
+       fp = <io_wrapper.OpenFile.return>
+       return == True
+
+    b) <<COMPOUND>>:
+       Read_File:
+
+       Open_Read:
+       
+       OpenFile:
+       filename = TestOutput.txt, mode = F_READ
+
+       Read:
+
+       ReadLine:
+       fp = <io_wrapper.OpenFile.return>
+       line = (2)12345678901234567890
+       line == Hallo Wowereit\n, Wo ist mein Flughafen?
+       return == True
+
+       Close_Read:
+
+       CloseFile:
+       fp = <io_wrapper.OpenFile.return>
+       return == True
+
+    c) <<COMPOUND>>:
+       Write_Read_File:
+
+       <<COMPOUND>>:
+       Write_File
+
+       <<COMPOUND>>:
+       Read_File
+
+    d) Add system( "del TestOutput.txt" ); to Testcase User Code
+       to make certain that the file gets deleted before each write.
