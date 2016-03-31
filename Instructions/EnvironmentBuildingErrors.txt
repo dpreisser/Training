@@ -1,0 +1,44 @@
+15) Excercise Environment Building Errors
+
+    need_macro.c (SourceFiles/EnvironmentBuildingErrors)
+
+    Environment->Update Environment->Choose Compiler:
+    Add MAXIMUM_MEMORY_SIZE=100
+
+16) Excercise Environment Building Errors
+
+    need_include.c (SourceFiles/EnvironmentBuildingErrors)
+
+    Environment->Update Environment->Locate Source Files:
+    Add Search1, Search2 (Search directories)
+
+17) Excercise Environment Building Errors
+
+    changes.c (SourceFiles/EnvironmentBuildingErrors)
+    changes_new.c
+
+    a) InitializeRecord.001
+
+       IntitializeRecord:
+
+       StudentName = Tom, StudentId = 20
+       return.field1 == Tom, return.field2 == 20
+
+       Test->Scripting->Export Script
+       Duplicate Test Case
+
+    b) InitializeRecord.002:
+
+       changes_new.c -> changes.c
+       Environment->Rebuild Environment
+
+       Notice: Test Cases are marked as failed.
+       (Tools->Options->Execute: Strict test case importing
+
+       Param1 = Tom, Param2 = 20
+       return.field1 == Tom, return.field2 == 20
+
+       Adjust InitializeRecord_001.tst.
+       Test->Scripting->Import Script
+
+       Notice: Test Cases are marked as successfull.

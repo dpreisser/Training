@@ -1,0 +1,54 @@
+14) Excercise Include Paths
+    
+    vcast_time.c (SourceFiles/SearchPaths)
+
+    a) Verfiy that it doesn't compile due to missing vcast_time.h.
+
+    b) time_add_seconds.001:
+
+       Environment->Update Environment->Locate Source Files:
+       Add include directory (Search directory).
+
+       Options->Display global data after: Each range iteration
+
+       time_add_seconds:
+
+       start.mins = 59,59 start.secs = 59,59
+       seconds = 1,61
+
+       return.mins == 60,60
+       return.secs == 0,60
+
+    c) time_add_seconds.001:
+
+       Environment->Update Environment->Locate Source Files:
+       Add include directory (Type handled directory).
+
+       Environment->Update Environment->Choose UUT & Stubs:
+       Add invalid_time to Additional Stubs.
+
+       Options->Display global data after: Each range iteration
+
+       time_add_seconds:
+
+       start.mins = 59,59 start.secs = 59,59
+       seconds = 1,61
+
+       return.mins == 60,60
+       return.secs == 0,60
+
+    d) time_add_seconds.002:
+
+       Environment->Update Environment->Locate Source Files:
+       Add include directory (Library include directory).
+
+       time_add_seconds:
+
+       <<vcast_time.time_add_seconds.start>>.mins = 59;
+       <<vcast_time.time_add_seconds.start>>.secs = 59;
+       seconds = 1
+
+       {{ <<vcast_time.time_add_seconds.return>>.mins == 60 }}
+       {{ <<vcast_time.time_add_seconds.return>>.secs == 0 }}
+
+
