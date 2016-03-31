@@ -1,0 +1,57 @@
+12) Excercise Abstract Classes
+
+    shape.cpp
+
+    a) getX.001:
+
+       Shape Instance:
+       vcast_concrete_Shape::vcast_concrete_Shape( ... )
+       x = 2, y = 3
+
+       Shape::getX:
+       return == 2
+
+    b) getX.002:
+
+       Shape Instance:
+       Rectangle::Rectangle( )
+       mX = 2, mY = 3
+
+       Shape::getX:
+       return == 2
+
+13) Excercise Templates
+
+    stack.cpp
+
+    a) Stack<float>::push.001:
+
+       Stack<float> Instance:
+       Stack<float>::Stack( ... ):
+       maxSize = 10
+       mStackCout == 1, mMaxSize == 10
+
+       Stack<float>::push:
+       item = 10.0
+
+    b) Stack<int>::push.001:
+
+       Stack<int> Instance:
+       Stack<int>::Stack( ... ):
+       maxSize = 10
+       mStackCout == 1, mMaxSize == 10
+
+       Stack<int>::push:
+       item = 10
+
+    c) Stack<int>::push.002:
+
+       Stack<int> Instance:
+       Stack<int>::Stack( ... ):
+       maxSize = 10
+       mStackCout == 1,2 mMaxSize == 10
+
+       Stack<int>::push:
+       item = 10,20
+
+       Options->Display global data after: Each range iteration
