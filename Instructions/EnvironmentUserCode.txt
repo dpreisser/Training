@@ -1,0 +1,42 @@
+11) Excercise Environment User Code
+
+    communiction.c
+
+    Environment->User Code->Edit: User Globals
+
+    #include "communication.h"
+
+    VCAST_USER_GLOBALS_EXTERN AltCmdT AltCmd;
+    VCAST_USER_GLOBALS_EXTERN CourseCmdT CourseCmd;
+
+    a) CHANGE_ALT:
+
+       AltCmd:	
+       newAltitude = 3000,41000
+
+       ProcessMessage:
+       messageCategory = Change_Alt, message = AltCmd
+       return == True,False 
+
+    b) CHANGE_COURSE:
+
+       CourseCmd:
+       newCourse = 1.507,-1.507
+
+       ProcessMessage:
+       messageCategory = Change_Course, message = CourseCmd
+       return == True,False 
+
+    c) PlainMessage:
+
+       VECTORCAST_STR1 = Hallo Wowereit
+
+       ProcessMessage:
+       messageCategory = Text_Message, message = VECTORCAST_STR1
+       return == True
+
+    d) InvalidMessage:
+
+       ProcessMessage:
+       messageCategory = Invalid, message = VECTORCAST_STR1
+       return == True
