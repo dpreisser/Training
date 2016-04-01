@@ -1,0 +1,71 @@
+  Excercise Code Coverage Options
+
+  UUT:
+  date.c utilities.c (SourceFiles/CodeCoverageOptions)
+
+  Coverage + Branch
+
+  a) DateString.001:
+
+     Tools->Options->Coverage->Coverage I/O type:
+     Animation
+
+     DateString:
+     theYear = 2016, theMonth = 4, theDay = 1
+     return == April\,1 2016
+
+     Execute
+     Activate Coverage Animation
+
+     Tools->Options->Coverage->Reort:
+     Demonstrate different Filter Metrics Report Options.
+
+  b) ConcatenateStrings.001:
+
+     Tools->Options->Builder:
+     Test all non]member inline functions
+
+     Tools->Options->Coverage:
+     Provide code coverage in header files
+
+     ConcatenateStrings:
+     str1 = a, str2 = bc
+     retuen == abc
+
+     Look at Metric Report.
+
+     Tools->Options->Coverage:
+     Show inlines as covered in all units
+     Coverage->Initialize->Statement+Branch
+
+     Look at Metric Report again.
+
+  c) Incomplete1:
+
+     MaxDays:
+     theYear = 2015,2000,(2)2016, theMonth = 2(2),1,4
+     return 28,29,31,30
+
+     View Coverage
+     Tools->Options->Coverage
+     Instrument logical operations in assignment statements
+     Coverage->Initialize->Statement+Branch
+     View Coverage
+
+  d) Incomplete2:
+
+     MaxDays:
+     theYear = 2015,2000,(3)2016, theMonth = 3(2),1,4
+     return 28,(2)29,31,30
+
+     View Coverage
+     Tools->Options->Coverage
+     Instrument implictit default case for switch-case blocks
+     Coverage->Initialize->Statement+Branch
+     View Coverage
+
+  e) Complete
+
+     MaxDays:
+     theYear = 2015,2000,(4)2016, theMonth = 3(2),1,4,0
+     return 28,(2)29,31,30,1

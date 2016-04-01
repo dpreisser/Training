@@ -1,4 +1,4 @@
-6) excercise Test Report and Options
+6) Excercise Test Report and Options
 
    airport.c
 

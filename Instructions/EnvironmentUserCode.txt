@@ -1,6 +1,6 @@
 11) Excercise Environment User Code
 
-    communiction.c
+    communication.c
 
     Environment->User Code->Edit: User Globals
 
