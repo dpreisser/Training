@@ -1,0 +1,93 @@
+18) Excercise Library Stubbing
+
+    advanced_stubbing.c
+
+    Environment->Update Environment->UUts and Stubs:
+    malloc (Library stubs)
+
+    a) Stub:
+
+       Stubbed Subprograms:
+       malloc:
+       return = NULL
+
+       use_malloc:
+       return == <<null>> (String Display Mode: ptr)
+
+    b) Real:
+
+       use_malloc:
+       return == ok
+
+19) Excercise Additional Stubs
+
+    advanced_stubbing.c
+
+    Environment->UserCode->Edit:
+    Unit Appendix User Code:
+
+    int myFunction();
+
+    int myFunction0() {
+    	return 0;
+    }
+
+    int myFunction1() {
+    	return 1;
+    }
+
+    Environment->Update Environment->UUts and Stubs:
+    myFunction (Additional stubs)
+
+    a) NULL:
+
+       use_function_pointer:
+       func = <<null>>
+       return == NULL_FUNCTION
+
+    b) Return_0,1:
+
+       Options->Diplay Global Data After: Each range iteration
+
+       use_function_pointer:
+       func = myFunction0, myFunction1
+       return == STATUS_PASS,STATUS_FAIL
+
+    c) Stub_Return_0,1:
+
+       Options->Diplay Global Data After: Each range iteration
+       Options->Return Data List Options: Multi-return spans range iterations
+
+       Stubbed Subprograms:
+       myFunction:
+       return = 0,1
+
+       use_function_pointer:
+       func = (2)myFunction
+       return == STATUS_PASS,STATUS_FAIL
+
+ 20) Excercise Return Data List Options
+
+     airport.c
+
+     a) Boston:
+
+     	Stubbed Subprograms:
+     	airportBarometer:
+     	return == 30.0
+
+     	airportAltimeter:
+     	code = BOS
+     	return == 0.0
+
+     b) Range:
+
+     	Options->Data List Options: Multi-return spans range iterations
+
+     	Stubbed Subprograms:
+     	airportBarometer:
+     	return == 30.0,(3)29.9,(2)29.8
+
+     	airportAltimeter:
+     	code = BOS..MIA
+     	return == 0.0,(3)100.0,(2)200.0+/-0.1%
