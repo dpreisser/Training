@@ -1,0 +1,53 @@
+22) Excercise Test Case Building Module E
+
+    control_flow.c
+
+    a) AreaTest:
+
+       <<GLOBAL>>
+       widthX = 2.0, lengthY = 3.0, heightZ = 3.0
+
+       computeBaseArea:
+       SHAPE = BOX
+       return == 6.0
+
+    b) VolumeTest1:
+
+       Alt + Click: Drag AreaTest on computeVolume.
+       Rename to VolumeTest1.
+
+       computeVolume:
+       SHAPE = BOX
+       return == 24.0
+
+    c) VolumeTest2:
+
+       Duplicate Test Case: VolumeTest1
+
+    d) 5_Partitions:
+
+       partitionExample:
+
+       Insert Partitioned Test Case.
+       Options->Number of data partitions: 5
+
+    e) 10_Partitions:
+
+       partitionExample:
+
+       Insert Partitioned Test Case.
+       Options->Number of data partitions: 10
+
+    f) Test_One:
+
+       controlFlowExample:
+
+       Edit Control Flow:
+
+       controlFlowExample
+       someExternaFunctionA
+       someExternaFunctionB
+       someExternaFunctionC
+       someExternaFunctionD
+       someExternaFunctionE
+       controlFlowExample
