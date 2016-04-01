@@ -1,0 +1,19 @@
+21) Excercise Create Tests from CSV files
+
+    line.c
+
+    a) findY:
+       Generate CSV Map:
+       Use existing data file:
+       line.csv (SourceFiles/SupportFiles)
+
+       Create Tests
+
+    b) findM:
+       Generate CSV Map:
+       Create template:
+       findM_Template.csv (SourceFiles/SupportFiles)
+
+       Edit findM_Template.csv.
+       
+       Create Tests
