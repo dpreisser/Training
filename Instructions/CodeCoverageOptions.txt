@@ -3,7 +3,7 @@
   UUT:
   date.c utilities.c (SourceFiles/CodeCoverageOptions)
 
-  Coverage + Branch
+  Coverage+Branch
 
   a) DateString.001:
 

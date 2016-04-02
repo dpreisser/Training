@@ -1,0 +1,140 @@
+  Excercise MCDC
+
+
+  Environment:
+  MCDC_EXAMPLE_W
+
+  UUT:
+  mcdc_example.c
+
+  Coverage:
+  Statement+MCDC
+
+
+  1) Test Cases MCDC_Example:
+
+     Tools->MC/DC->View Equivalence Matrices
+     Build the test cases accordingly.
+     For example:
+
+     a) PairA_2_6:
+
+     	MCDC_Example:
+     	a = 1,0
+     	b = 1,1
+     	c = 0,0
+     	return == 1,0
+
+     b) PairB_2_4:
+
+     	MCDC_Example:
+     	a = 1,1
+     	b = 1,0
+     	c = 0,0
+     	return == 1,0
+
+     c) PairC_3_4:
+
+     	MCDC_Example:
+     	a = 1,1
+     	b = 1,1
+     	c = 1,0
+     	return == 1,0
+
+
+  2) Test Cases LogicalInAssignment_Example:
+
+     a) LogicalInAssignment_Example.001:
+     		
+	LogicalInAssignment_Example:
+	a = 1, b = 1, c = 1
+	return == 1
+
+	Tools->Options->Coverage:
+     	Instrument logical operations in assignment statements
+
+	Show difference in code coverage if this option is on.
+
+
+  3) Test Cases LogicalFunctionCall_Example:
+
+     a) LogicalFunctionCall_Example.001:
+
+     	Stubbed:
+	foo:
+	x == 1
+	return = 1
+
+     	LogicalFunctionCall_Example:
+	a = 1, b = 1, c = 1
+	return == 1
+
+	Tools->Options->Coverage:
+     	Instrument logical operations in function calls
+
+	Show difference in code coverage if this option is on.
+	
+
+  4) Test Cases LargeCondition1:
+
+     a) Combinatorial:
+
+     	LargeCondition1:
+     	a = 1,0, b = 1,0, ... i = 1,0
+
+     	Options: Combination Testing
+
+     	Waste: 2^9 = 512 tests.
+
+     b) Tools->Options->Coverage->MC/DC:
+     	Maximum subconditions in MC/DC table pre-calculations: 8, then 9.
+     
+	Insert MC/DC Test Cases: 18
+     	Fails with 8 because 8 is too low.
+
+     c) LargeCondition1.001 - LargeCondition.010:
+
+     	LargeCondition.001:
+
+     	LargeCondition1:
+     	a = 1, b = 1, ... i = 1
+	return == 1
+
+     	LargeCondition.002 ... LargeCondition.010:
+
+	LargeCondtion1:
+     	i = 0, h = 0, ... a = 0
+	return == 0
+
+
+  5) Test Cases LargeCondition2:
+
+     a) Combinatorial:
+
+     	LargeCondition2:
+     	a = 1,0, b = 1,0, ... i = 1,0
+
+     	Options: Combination Testing
+
+     	Waste: 2^9 = 512 tests.
+
+     b) Tools->Options->Coverage->MC/DC:
+     	Maximum subconditions in MC/DC table pre-calculations: 8
+     
+	Insert MC/DC Test Cases: 16
+
+     c) Combinatorial_||, Combinatorial_F_I, Combinatorial_F_H, Combinatorial_F_FG, Combinatorial_F_C:
+
+     	Combinatorial_||:
+
+     	LargeCondition2:
+     	a = 1,0 b = 1,0, c = 0, d = 1,0, e = 1,0, f = 1, g = 0, h = 1, i = 1
+	return == 1
+
+     	Combinatorial_F_I:
+
+	LargeCondition2:
+     	i = 0, remainder the same as Combinatorial_|| 
+	return == 0
+
+	Similar for the other test cases. 20 tests altogether.
