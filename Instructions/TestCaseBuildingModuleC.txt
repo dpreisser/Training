@@ -1,69 +1,98 @@
-3) Excercise Test Case Building Module C
+Excercise Test Case Building Module C
 
-   manager.c
+  A) Environment:
+     MANAGER_W
 
-   a) Add_Party_To_Waiting_List.001:
+     UUT:
+     manager.c:
 
-      Add_Party_To_Waiting_List:
-      Name = Wowereit (String)
+     Coverage:
+     None first, Statement later
 
-      <<GLOBAL>>:
-      WaitingList[0] == Wowereit
-      WaitingListSize == 1
+     UUTs & Stubs->Stub dependencies:
+     All
 
-   b) Add_Party_To_Waiting_List.002:
 
-      Add_Party_To_Waiting_List:
-      Name = Wowereit (char[9], display character mode = char )
+     1) Test Cases Add_Party_To_Waiting_List:
 
-      <<GLOBAL>>:
-      WaitingList[0] == Wowereit
-      WaitingListSize == 1
+     	a) Add_Party_To_Waiting_List.001:
 
-   c) Add_Party_To_Waiting_List.003:
+      	   Add_Party_To_Waiting_List:
+      	   Name = Wowereit (string)
+	   String Display Mode: string
 
-      Add_Party_To_Waiting_List:
-      Name = Wowereit (char[9], display character mode = numeric )
+	   manager:
+      	   <<GLOBAL>>:
+      	   WaitingList[0] == Wowereit
+      	   WaitingListSize == 1
 
-      <<GLOBAL>>:
-      WaitingList[0] == Wowereit
-      WaitingListSize == 1
+   	b) Add_Party_To_Waiting_List.002:
 
-   d) Add_Party_To_Waiting_List.004:
+      	   Add_Party_To_Waiting_List:
+      	   Name = Wowereit (ptr, char[9])
+	   String Display Mode: ptr
+	   Character Display Mode = char
 
-      Add_Party_To_Waiting_List:
-      Name = Wowereit,Platzeck (String)
+	   manager:
+      	   <<GLOBAL>>:
+      	   WaitingList[0] == Wowereit
+      	   WaitingListSize == 1
 
-      <<GLOBAL>>:
-      WaitingList[0..7] = Wowereit
-      WaitingListSize = 8
+   	c) Add_Party_To_Waiting_List.003:
 
-      WaitingList[8] == Wowereit
-      WaitingList[9] == Platzeck
-      WaitingListSize == 10
+      	   Add_Party_To_Waiting_List:
+	   Name = Wowereit (ptr, char[9])
+	   String Display Mode: ptr
+	   Character Display Mode = numeric (partially)
 
-   e) Add_Party_To_Waiting_List.005:
+	   manager:
+      	   <<GLOBAL>>:
+      	   WaitingList[0] == Wowereit
+      	   WaitingListSize == 1
 
-      Add_Party_To_Waiting_List:
-      Name = Wowereit,Platzeck (String)
+   	d) Add_Party_To_Waiting_List.004:
 
-      <<GLOBAL>>:
-      WaitingList[0..7] = Wowereit
-      WaitingListSize = 8
+      	   Add_Party_To_Waiting_List:
+      	   Name = Wowereit,Platzeck (String)
 
-      WaitingList[8] == (2)Wowereit
-      WaitingList[9] == "",Platzeck
-      WaitingListSize == 9,10
+	   manager:
+      	   <<GLOBAL>>:
+      	   WaitingList[0..7] = Wowereit
+      	   WaitingListSize = 8
 
-      Options: Display global data after: Each Range Iteration
+      	   WaitingList[8] == Wowereit
+      	   WaitingList[9] == Platzeck
+      	   WaitingListSize == 10
 
-   f) Test3:
+   	e) Add_Party_To_Waiting_List.005:
 
-      Place_Order:
-      Table: 0..5/1
-      Seat: 0..3/1
+      	   Add_Party_To_Waiting_List:
+	   Name = Wowereit,Platzeck (String)
 
-      Purpose: How many events?
+	   manager:
+      	   <<GLOBAL>>:
+      	   WaitingList[0..7] = Wowereit
+      	   WaitingListSize = 8
 
-      Change:
-      Options: Combination Testing
+      	   WaitingList[8] == (2)Wowereit
+      	   WaitingList[9] == "",Platzeck
+      	   WaitingListSize == 9,10
+
+      	   Options->Display global data after: Each Range Iteration
+
+
+        2) Test Cases Place_Order:
+
+   	   a) Test3:
+
+      	      Place_Order:
+      	      Table: 0..5/1
+      	      Seat: 0..3/1
+
+      	      Purpose: How many events?
+
+	      Options: Combination Testing
+
+	      How many range iterations?
+	      6 without Combination Testing
+	      24 with Combination Testing

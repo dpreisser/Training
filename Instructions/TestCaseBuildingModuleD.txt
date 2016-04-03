@@ -1,31 +1,155 @@
-4) Excercise Test Case Building Module D
+Excercise Test Case Building Module D
 
-   dishwasher_fsm.c
+  A) Environment:
+     DISHWASHER_W
 
-   a) Follow the instructions for white box:
+     UUT:
+     dishwasher_fsm.c  
 
-      Can use static functions which would not be accessible.
+     Coverage:
+     Statement
 
-      Initialisation Tests:
-      PowerOn:
-      powerOn = 1
+     UUTs & Stubs->Stub dependencies:
+     All
+   
+     Follow the instructions for white box.
+     Can use static functions because white box.
 
-      Compound Test Case <<COMPOUND>>.001:
-      processIdleState.001
-      processWashCycle.001
-      processRinseCycle.001
-      processDryCycle.001
 
-   b) processRinseCycle.002:
+     1) Initialization Tests:
+
+     	a) PowerOn:
+
+	   dishwasher_fsm:
+	   <<GLOBAL>>:
+      	   powerOn = 1
+
+	   Automatic Initialization
+
+
+     2) Coumpound Tests:
+
+      	a) <<COMPOUND>>.001:
+      	   processIdleState.001
+      	   processWashCycle.001
+      	   processRinseCycle.001
+      	   processDryCycle.001
+
+
+     3) Test Cases processIdleState:
+
+     	a) processIdleState.001
+
+	   processIdleState:
+	   event = EVENT_START_DRY
+      	   return == STS_ALL_GOOD
+
+	   Fails unless powerOn == 1.
+	   Can do for each test case separately
+	   or as initialization test for all.
+
+
+     4) Test Cases processWashCycle:
+
+     	a) processWashCycle.001
+
+	   processWashCycle:
+	   event = EVENT_START_RINSE
+      	   return == STS_ALL_GOOD
+
+
+     5) Test Cases processRinseCycle:
+
+     	a) processRinseCycle.001:
       
-      processRinseCycle:
-      event = EVENT_START_DRY
-      return == STS_NO_HEAT
+	   processRinseCycle:
+      	   event = EVENT_START_DRY
+      	   return == STS_ALL_GOOD
 
-      SBF:
-      checkHeatElement:
-      return = STS_NO_HEAT
+     	b) processRinseCycle.002:
+      
+	   processRinseCycle:
+      	   event = EVENT_START_DRY
+      	   return == STS_NO_HEAT
 
-   c) Follow the instructions for black box:
+      	   SBF:
+      	   checkHeatElement:
+      	   return = STS_NO_HEAT
 
-      Achieve the same by only using public functions.
+
+     6) Test Cases processDryCycle:
+
+     	a) processDryCycle.001:
+      
+	   processDryCycle:
+      	   event = EVENT_STOP
+      	   return == STS_ALL_GOOD
+
+
+  B) Environment:
+     DISHWASHER_B
+
+     UUT:
+     dishwasher_fsm.c  
+
+     Coverage:
+     Statement
+
+     UUTs & Stubs->Stub dependencies:
+     All
+   
+     Follow the instructions for black box.
+
+
+     1) Coumpound Tests:
+
+      	a) <<COMPOUND>>.001:
+      	   applyPower.001
+      	   StartWash
+      	   StartRinse
+      	   StartDry
+	   GoIdle
+	   turnOffPower.001
+
+
+     2) Test Cases applyPower:
+
+     	a) applyPower.001
+
+	   applyPower:
+      	   return == STS_ALL_GOOD
+
+
+     3) Test Cases turnOffPower:
+
+     	a) turnOffPower.001
+
+	   turnOffPower:
+      	   return == STS_ALL_GOOD
+
+
+     4) Test Cases EventHandler:
+
+     	a) StartWash:
+      
+	   EventHandler:
+      	   event = EVENT_START_WASH
+      	   return == STS_ALL_GOOD
+
+     	b) StartRinse:
+      
+	   EventHandler:
+      	   event = EVENT_START_RINSE
+      	   return == STS_ALL_GOOD
+
+     	c) StartDry:
+      
+	   EventHandler:
+      	   event = EVENT_START_DRY
+      	   return == STS_ALL_GOOD
+
+     	d) GoIdle:
+      
+	   EventHandler:
+      	   event = EVENT_STOP
+      	   return == STS_ALL_GOOD
