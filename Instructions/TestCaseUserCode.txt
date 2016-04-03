@@ -1,58 +1,78 @@
-10) Excercise Test Case User Code
+Excercise Test Case User Code
 
-    io_wrapper.c
+  A) Environment:
+     IO_WRAPPER_W
+     
+     UUT:
+     io_wrapper.c
 
-    a) <<COMPOUND>>:
-       Write_File:
+     Coverage:
+     None
 
-       Open_Write:
+     UUTs & Stubs->Stub dependencies:
+     All
+
+     
+     1) Compound Tests:
+
+     	a) Write_File:
+	   Open_Write
+	   Write
+	   Close_Write
+
+     	b) Read_File:
+	   Open_Read
+	   Read
+	   Close_Read
+
+	c) Write_Read_File:
+	   Write_File
+	   Read_File
+
+
+     2) Test Cases OpenFile:
+
+       	a) Open_Write:
        
-       OpenFile:
-       filename = TestOutput.txt, mode = F_WRITE
+	   OpenFile:
+       	   filename = TestOutput.txt, mode = F_WRITE
 
-       Write:
+	   Add system( "del TestOutput.txt" ); to Testcase User Code
+       	   to make certain that the file gets deleted before each write.
 
-       WriteString:
-       fp = <io_wrapper.OpenFile.return>
-       line = Hallo Wowereit\n Wo ist mein Flughafen?
-       return == True
+       	b) Open_Read:
+       	   filename = TestOutput.txt, mode = F_READ
 
-       Close_Write:
 
-       CloseFile:
-       fp = <io_wrapper.OpenFile.return>
-       return == True
+     3) Test Cases CloseFile:
 
-    b) <<COMPOUND>>:
-       Read_File:
-
-       Open_Read:
+       	a) Close_Write:
        
-       OpenFile:
-       filename = TestOutput.txt, mode = F_READ
+	   CloseFile:
+       	   fp = <io_wrapper.OpenFile.return>
+       	   return == True
 
-       Read:
+       	b) Close_Read:
+       	   fp = <io_wrapper.OpenFile.return>
+	   return == True
 
-       ReadLine:
-       fp = <io_wrapper.OpenFile.return>
-       line = (2)12345678901234567890
-       line == Hallo Wowereit\n, Wo ist mein Flughafen?
-       return == True
 
-       Close_Read:
+     4) Test Cases WriteString:
 
-       CloseFile:
-       fp = <io_wrapper.OpenFile.return>
-       return == True
+     	a) Write:
 
-    c) <<COMPOUND>>:
-       Write_Read_File:
+       	   WriteString:
+       	   fp = <io_wrapper.OpenFile.return>
+       	   line = Hallo Wowereit\n Wo ist mein Flughafen?
+       	   return == True
 
-       <<COMPOUND>>:
-       Write_File
 
-       <<COMPOUND>>:
-       Read_File
+     5) Test Cases ReadLine:
 
-    d) Add system( "del TestOutput.txt" ); to Testcase User Code
-       to make certain that the file gets deleted before each write.
+       	a) Read:
+
+       	   ReadLine:
+       	   fp = <io_wrapper.OpenFile.return>
+       	   line = (2)12345678901234567890
+       	   line == Hallo Wowereit\n, Wo ist mein Flughafen?
+       	   return == True

@@ -1,46 +1,68 @@
-6) Excercise Test Report and Options
+Excercise Test Report and Options
 
-   airport.c
+  A) Environment:
+     AIRPORT_W
 
-   a) IntToText.001:
+     UUT:
+     airport.c
 
-      IntToText:
-      value = 100
-      return == 100
+     Coverage:
+     Statement
 
-      Choose different options:
-      Show only data with expected results
-      Show only events with expected results
+     UUTs & Stubs->Stub dependencies:
+     All
 
-      Put dir in Tools->Options->Report: File version command.
 
-   b) LogBoardingPas.001:
+   1) Test Cases IntToText:
 
-      LogBoardingPass:
-      message = "Hallo Wowereit\n. Wo ist mein Flughafen?"
+      a) IntToText.001:
 
-      Choose Tools->Options->Execute: Redirect standard output.
+      	 IntToText:
+      	 value = 100
+      	 return == 100
 
-   c) BoardingPassAddFlight.001:
+      	 Choose different options:
+      	 Show only data with expected results
+      	 Show only events with expected results
 
-      BoardingPassAddFlight:
-      info.from == BOS
-      info.to == BOS
-      info.flightNumber == 0
+      	 Put dir in Tools->Options->Report: File version command.
 
-   d) Play with different report settings.
-      This can be demonstrated for example with TestCaseBuildingModuleD.
 
-      Notes:
+   2) Test Cases LogBoardingPass:
 
-      Test Case Data: Only dependent on test case selection.
-      Execution Results: Only dependent on test case selection.
+      a) LogBoardingPass.001:
 
-      For metrics to appear only for the selected (ticked) test cases:
-      - Untick "Allways use all results in reports" (Test->View).
-      - Tick only the test cases you want to appear in metrics.
+      	 LogBoardingPass:
+      	 message = "Hallo Wowereit\n. Wo ist mein Flughafen?"
 
-      Coverage only appears for the slected (ticked) test cases.
-      "Allways use all results in reports" doesn't have any influence.
+      	 Choose Tools->Options->Execute: Redirect standard output
 
-      Testcase Management can not be influenced.
+
+   3) Test Cases BoardingPassAddFlight:
+
+      a) BoardingPassAddFlight.001:
+
+      	 BoardingPassAddFlight:
+      	 info.from == BOS
+      	 info.to == BOS
+      	 info.flightNumber == 0
+
+
+   Extra:
+
+   Play with different report settings.
+   This can be demonstrated for example with TestCaseBuildingModuleD.
+
+   Notes:
+
+   Test Case Data: Only dependent on test case selection.
+   Execution Results: Only dependent on test case selection.
+
+   For metrics to appear only for the selected (ticked) test cases:
+   - Untick "Always use all results in reports" (Test->View).
+   - Tick only the test cases you want to appear in metrics.
+
+   Coverage only appears for the slected (ticked) test cases.
+   "Always use all results in reports" doesn't have any influence.
+
+   Testcase Management can not be influenced.
