@@ -1,16 +1,28 @@
-9) Excercise Testing Inline Functions
+Excercise Testing Inline Functions
 
-   inline.cpp
+  A) Environment:
+     INLINE_W
 
-   Tools->Options->Coverage: Provide code coverage in header files
+     UUT:
+     inline.cpp
 
-   a) inline (uut):
+     Coverage:
+     Statement
+
+     UUTs & Stubs->Stub dependencies:
+     All
+
+     Tools->Options->Coverage: Provide code coverage in header files
+
+
+   1) inline (uut):
    
       Insert Basis Path Test Cases.
 
       Note: See that not all statements have been covered in Test Case Management Report.
 
-   b) Tools->Options->Builder: Test all member inline functions
+
+   2) Tools->Options->Builder: Test all member inline functions
       			       Test all non-member inline functions
 
       Insert Basis Path Test Cases for the new functions visible.

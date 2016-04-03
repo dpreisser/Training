@@ -1,63 +1,103 @@
-8) Excercise Testing C++ Classes
+Excercise Testing C++ Classes
 
-   shapes.cpp
-   combo.cpp
+  A) Environment:
+     SHAPE_W
 
-   a) Rectangle:
+     UUT:
+     combo.cpp
+     shapes.cpp
 
-      Rectangle::Rectangle( ... )
-      x = 2, y = 3, height = 4, width = 5
+     Coverage:
+     Statement
 
-      Rectangle:
-      mX == 2, mY == 3, mHeight == 4, mWidth == 5
+     UUTs & Stubs->Stub dependencies:
+     All
 
-   b) SEGFLT:
 
-      Rectangle::getArea:
-      return == 20.0
+     1) Initialization Tests:
 
-   c) Normal:
+     	a) <<INIT>>.001:
+	   
+	   combo:
+      	   <<GLOBAL>>:
+      	   Rectangle Instance: Rectangle
+      	   Rectangle::Rectangle( ... )
+      	   x = 2, y = 3, height = 4, width = 5
 
-      <<GLOBAL>>:
-      Rectangle Instance:
-      Rectangle::Rectangle( ... )
-      x = 2, y = 3, height = 4, width = 5
 
-      Rectangle::getArea:
-      return == 20.0
+     2) Compound Tests:
 
-   c) Default:
+     	a) <COMPOUND>>.001:
+	   Build_Rectangle
+	   getArea_C
+	   getY_C
 
-      <<GLOBAL>>:
-      Rectangle Instance:
-      Rectangle::Rectangle()
-      mX = 2, mY = 3, mHeight = 4, mWidth = 5
 
-      Rectangle::getArea:
-      return == 20.0
+     3) Test Cases Rectangle::Rectangle( ... ):
 
-   e) Init.001:
+      	a) Build_Rectangle:
 
-      <<GLOBAL>>:
-      Rectangle Instance:
-      Rectangle::Rectangle( ... )
-      x = 2, y = 3, height = 4, width = 5
+	   Rectangle::Rectangle( ... )
+      	   x = 2, y = 3, height = 4, width = 5
 
-      Rectangle::getArea_I:
-      return == 20.0
+      	b) Rectangle:
 
-      Rectangle::getX_I:
-      return == 2
+	   Rectangle::Rectangle( ... )
+      	   x = 2, y = 3, height = 4, width = 5
+      	   mX == 2, mY == 3, mHeight == 4, mWidth == 5
 
-   f) <<COMPOUND>>.001
-      
-      <<GLOBAL>>:
-      Rectangle Instance:
-      Rectangle::Rectangle( ... )
-      x = 2, y = 3, height = 4, width = 5
+	   
+     4) Test Cases Rectangle::getArea:
 
-      Rectangle::getArea_C:
-      return == 20.0
+     	a) SEGFLT:
 
-      Rectangle::getY_C:
-      return == 3
+      	   Rectangle::getArea:
+      	   return == 20.0
+
+   	b) Normal:
+
+	   combo:
+      	   <<GLOBAL>>:
+      	   Rectangle Instance: Rectangle
+      	   Rectangle::Rectangle( ... )
+      	   x = 2, y = 3, height = 4, width = 5
+
+	   Rectangle::getArea:
+      	   return == 20.0
+
+   	c) Default:
+
+	   combo:
+      	   <<GLOBAL>>:
+      	   Rectangle Instance: Rectangle
+      	   Rectangle::Rectangle()
+      	   mX = 2, mY = 3, mHeight = 4, mWidth = 5
+
+      	   Rectangle::getArea:
+      	   return == 20.0
+
+	d) getArea_I:
+
+	   Rectangle::getArea:
+      	   return == 20.0
+
+      	e) getArea_C:
+
+	   Rectangle::getArea:
+      	   return == 20.0
+
+
+     5) Test Cases Rectangle::getX:
+
+      	a) getX_I:
+
+	   Rectangle::getX:
+      	   return == 2
+
+
+     6) Test Cases Rectangle::getY:
+
+        a) getY_C:
+
+	   Rectangle::getY:
+      	   return == 3
