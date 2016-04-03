@@ -1,52 +1,74 @@
-1) Excercise Test Case Building Module A
+  Excercise Test Case Building Module A
 
-   manager.c:
+  
+  Environment:
+  MANAGER_W
 
-   a) MyTest:
+  UUT:
+  manager.c:
 
-      Place_Order:
-      Table = 1, Seat = 0, Order.Entree = Chicken
+  Coverage:
+  None first, Statement later
 
-      Update_Table_Record:
-      Table == 1, check_total == 10.0.
 
-      Show out of range with Order.entree = 5.
+  1) Test Cases Place_Order:
 
-      Purpose: First Unit Test for Place_Order.
+     a) MyTest:
 
-   b) Cov_Place_Order:
+	Stubbed:
+      	Update_Table_Record:
+      	Table == 1, check_total == 10.0.
 
-      Place_Order:
-      Loop over the Order.entree choices: range input (properties).
+      	Place_Order:
+      	Table = 1, Seat = 0
+	Order.Entree = Chicken
 
-      Update_Table_Record:
-      List of different check_totals (manual).
-			  
-      Purpose: Code coverage of Place_Order.
+      	Show out of range with Order.entree = 5.
 
-   c) Cov_Place_Dessert:
+      	Purpose: First Unit Test for Place_Order.
 
-      Place_Order:
-      Order.Salad = 3 x Caesar, 3 x Green.
-      Order.Beverage = 3 x Mixed_Drink, 3 x Wine.
+     b) Cov_Place_Order:
 
-      Purpose: Coverage of Add_Included_Dessert and of Place_Order.
+     	Stubbed:
+      	Update_Table_Record:
+      	Table == 1, ckeck_total == 0.0,14.0,10.0,18.0,12.0,0.0
 
-   d) FoolTheBill:
+      	Place_Order:
+      	Table = 1, Seat = 0
+	Order.Entree = NO_ENTREE..5/1
 
-      Place_Order:
-      Table = 1, Seat = 0, Order.Entree = Chicken
+      	Purpose: Code coverage of Place_Order.
 
-      Enable SBF for Add_Included_Dessert.
+     c) Cov_Place_Dessert:
 
-      Add_Included_Dessert:
-      Order[0].Entree = Lobser
+     	Stubbed:
+      	Update_Table_Record:
+      	Table == 1, ckeck_total == 0.0,14.0,10.0,18.0,12.0,0.0
 
-      Update_Table_Record:
-      Table == 1 check_total = 10.0 Order[0].Entree == Lobster
+      	Place_Order:
+	Table = 1, Seat = 0
+      	Order.Salad = (3)Caesar,(3)Green
+	Order.Entree = NO_ENTREE..5/1
+      	Order.Beverage = (3)Mixed_Drink,(3)Wine.
 
-      Purpose: Get the lobster for the price of a chicken.
-      Problem with data consistency in code.
-		   
-		   
+      	Purpose: Coverage of Add_Included_Dessert and of Place_Order.
 
+     d) FoolTheBill:
+
+      	Enable SBF for Add_Included_Dessert.
+
+	Stubbed:
+
+      	Add_Included_Dessert:
+      	Order[0].Entree = Lobster
+
+      	Update_Table_Record:
+      	Table == 1, check_total == 10.0
+	Order[0].Entree == Lobster
+
+      	Place_Order:
+      	Table = 1, Seat = 0
+	Order.Entree = Chicken
+
+	Purpose: Get the lobster for the price of a chicken.
+	Problem with data consistency in code.

@@ -92,7 +92,7 @@
 	Insert MC/DC Test Cases: 18
      	Fails with 8 because 8 is too low.
 
-     c) LargeCondition1.001 - LargeCondition.010:
+     c) LargeCondition1.001 - LargeCondition1.010:
 
      	LargeCondition.001:
 
@@ -103,8 +103,10 @@
      	LargeCondition.002 ... LargeCondition.010:
 
 	LargeCondtion1:
-     	i = 0, h = 0, ... a = 0
+     	i = 0, remainder the same as LargeCondition.001
 	return == 0
+
+	Similar for the other test cases. 10 tests altogether.
 
 
   5) Test Cases LargeCondition2:
@@ -134,7 +136,7 @@
      	Combinatorial_F_I:
 
 	LargeCondition2:
-     	i = 0, remainder the same as Combinatorial_|| 
+     	i = 0, remainder the same as Combinatorial_||
 	return == 0
 
 	Similar for the other test cases. 20 tests altogether.

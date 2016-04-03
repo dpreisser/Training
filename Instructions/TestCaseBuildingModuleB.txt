@@ -1,47 +1,70 @@
-2) Excercise Test Case Building B
+  Excercise Test Case Building B
 
-   float_example.c
+  
+  Environment:
+  FLOAT_W
 
-   a) floatTest.001:
+  UUT:
+  float_example.c
 
-      floatTest:
-      Param = 1.2e2, return == 120.0
+  Coverage:
+  Statement
 
-   b) floatTest.002:
 
-      floatTest:
-      Param = 1.0..1.4/0.1, return == 1.2+/-20%
+  1) Test Cases floatTest:
 
-   c) floatTest.003:
+     a) floatTest.001:
 
-      floatTest:
-      Param = <MIN>>,<<MID>,<<MAX>, return == <MIN>>,0.0,<<MAX>
+      	floatTest:
+      	Param = 1.2e2
+	return == 120.0
 
-      Comment: Expected value <<MID> not working.
+     b) floatTest.002:
 
-   d) floatTest.004:
+      	floatTest:
+      	Param = 1.0..1.4/0.1
+	return == 1.2+/-20%
 
-      floatTest:
-      Param = <<POS_INF>>,<<NEG_INF>>,<<NAN>>, return == <<POS_INF>>,<<NEG_INF>>,<<NAN>>
+     c) floatTest.003:
 
-   e) floatTest.005:
+      	floatTest:
+      	Param = <MIN>>,<<MID>,<<MAX>
+	return == <MIN>>,0.0,<<MAX>
 
-      floatTest:
-      Param = <<MIN-1>>,<<MAX+1>>, return == <<MIN>>,<<MAX>>
+      	Comment: Expected value <<MID> not working.
 
-   f) getOrder.001:
+     d) floatTest.004:
 
-      getOrder:
-      index = 0..3/1
-      return.Soup == No_Soup
-      return.Salad == Caesar
-      return.Entree == Steak..Pasta/1
-      return.Beverage == Mixed_Drink
+     	floatTest:
+      	Param = <<POS_INF>>,<<NEG_INF>>,<<NAN>>
+	return == <<POS_INF>>,<<NEG_INF>>,<<NAN>>
 
-      <<GLOBAL>>:
-      OrderArray[0].Entree = Steak
-      OrderArray[0].Entree = Chicken
-      OrderArray[0].Entree = Lobster
-      OrderArray[0].Entree = Pasta
+     e) floatTest.005:
 
-      Remainder stays the same. Cut & Paste.
+      	floatTest:
+      	Param = <<MIN-1>>,<<MAX+1>>
+	return == <<MIN>>,<<MAX>>
+
+
+  2) Test Cases getOrder:
+
+     a) getOrder.001:
+
+      	<<GLOBAL>>:
+	OrderArray[0].Soup = NO_SOUP
+	OrderArray[0].Salad = Caesar
+      	OrderArray[0].Entree = Steak
+	OrderArray[0].Beverage = Mixed_Drink
+	
+      	OrderArray[1].Entree = Chicken
+      	OrderArray[2].Entree = Lobster
+      	OrderArray[3].Entree = Pasta
+
+	Remainder stays the same. Cut & Paste.
+
+      	getOrder:
+      	index = 0..3/1
+      	return.Soup == No_Soup
+      	return.Salad == Caesar
+      	return.Entree == Steak..Pasta/1
+      	return.Beverage == Mixed_Drink
