@@ -1,74 +1,159 @@
-  Excercise Test Case Building Module A
+Excercise Test Case Building Module A
 
   
-  Environment:
-  MANAGER_W
+  A) Environment:
+     MANAGER_W
 
-  UUT:
-  manager.c:
+     UUT:
+     manager.c:
 
-  Coverage:
-  None first, Statement later
+     Coverage:
+     None first, Statement later
+
+     UUTs & Stubs->Stub dependencies:
+     All
 
 
-  1) Test Cases Place_Order:
+     1) Test Cases Place_Order:
 
-     a) MyTest:
+     	a) MyTest:
 
-	Stubbed:
-      	Update_Table_Record:
-      	Table == 1, check_total == 10.0.
+	   Stubbed:
 
-      	Place_Order:
-      	Table = 1, Seat = 0
-	Order.Entree = Chicken
+      	   Update_Table_Record:
+      	   Table == 1, check_total == 10.0
+	   Order[0].Entree == Chicken
 
-      	Show out of range with Order.entree = 5.
+      	   Place_Order:
+      	   Table = 1, Seat = 0
+	   Order.Entree = Chicken
 
-      	Purpose: First Unit Test for Place_Order.
+      	   Show out of range with Order.entree = 5.
 
-     b) Cov_Place_Order:
+      	   Purpose: First Unit Test for Place_Order.
 
-     	Stubbed:
-      	Update_Table_Record:
-      	Table == 1, ckeck_total == 0.0,14.0,10.0,18.0,12.0,0.0
+     	b) Cov_Place_Order:
 
-      	Place_Order:
-      	Table = 1, Seat = 0
-	Order.Entree = NO_ENTREE..5/1
+     	   Stubbed:
 
-      	Purpose: Code coverage of Place_Order.
+      	   Update_Table_Record:
+      	   Table == 1, ckeck_total == 0.0,14.0,10.0,18.0,12.0,0.0
 
-     c) Cov_Place_Dessert:
+      	   Place_Order:
+      	   Table = 1, Seat = 0
+	   Order.Entree = NO_ENTREE..5/1
 
-     	Stubbed:
-      	Update_Table_Record:
-      	Table == 1, ckeck_total == 0.0,14.0,10.0,18.0,12.0,0.0
+      	   Purpose: Code coverage of Place_Order.
 
-      	Place_Order:
-	Table = 1, Seat = 0
-      	Order.Salad = (3)Caesar,(3)Green
-	Order.Entree = NO_ENTREE..5/1
-      	Order.Beverage = (3)Mixed_Drink,(3)Wine.
+     	c) Cov_Place_Dessert:
 
-      	Purpose: Coverage of Add_Included_Dessert and of Place_Order.
+     	   Stubbed:
 
-     d) FoolTheBill:
+      	   Update_Table_Record:
+      	   Table == 1, ckeck_total == 0.0,14.0,10.0,18.0,12.0,0.0
 
-      	Enable SBF for Add_Included_Dessert.
+      	   Place_Order:
+	   Table = 1, Seat = 0
+      	   Order.Salad = (3)Caesar,(3)Green
+	   Order.Entree = NO_ENTREE..5/1
+      	   Order.Beverage = (3)Mixed_Drink,(3)Wine.
 
-	Stubbed:
+      	   Purpose: Coverage of Add_Included_Dessert and of Place_Order.
 
-      	Add_Included_Dessert:
-      	Order[0].Entree = Lobster
+     	 d) FoolTheBill:
 
-      	Update_Table_Record:
-      	Table == 1, check_total == 10.0
-	Order[0].Entree == Lobster
+      	    Enable SBF for Add_Included_Dessert.
 
-      	Place_Order:
-      	Table = 1, Seat = 0
-	Order.Entree = Chicken
+	    Stubbed:
 
-	Purpose: Get the lobster for the price of a chicken.
-	Problem with data consistency in code.
+      	    Add_Included_Dessert:
+      	    Order[0].Entree = Lobster
+
+      	    Update_Table_Record:
+      	    Table == 1, check_total == 10.0
+	    Order[0].Entree == Lobster
+
+      	    Place_Order:
+      	    Table = 1, Seat = 0
+	    Order.Entree = Chicken
+
+	    Purpose: Get the lobster for the price of a chicken.
+	    Problem with data consistency in code.
+
+
+  B) Environment:
+     MANA_NONE
+
+     UUT:
+     manager.c:
+
+     Coverage:
+     None
+
+     UUTs & Stubs->Stub dependencies:
+     None
+
+     1) Test Cases Place_Order:
+
+     	a) MyTest:
+
+	   database:
+	   <<GLOBAL>>:
+
+      	   Table_Data[1]:
+	   Check_Total == 10.0
+	   Order[0].Entree == Chicken
+
+      	   Place_Order:
+      	   Table = 1, Seat = 0
+	   Order.Entree = Chicken
+
+      	   Show that there is no stubbed Update_Table_Record.
+	   Instead we access global Table_Data.
+
+
+  C) Environment:
+     MANA_STUB_PROTO
+
+     UUT:
+     manager.c:
+
+     Coverage:
+     None
+
+     UUTs & Stubs->Stub dependencies:
+     Custom, database (stub by prototype)
+
+     Equivalent to environment MANAGER_W.
+
+
+  D) Environment:
+     MANA_STUB_IMPL
+
+     UUT:
+     manager.c:
+
+     Coverage:
+     None
+
+     UUTs & Stubs->Stub dependencies:
+     Custom, database (stub by implementation)
+
+     Equivalent to environment MANAGER_W or MANA_STUB_PROTO
+     except that names of parameters are taken from implementation:
+     check_total (proto) -> check_ttl (impl).
+
+
+  E) Environment:
+     MANA_STUB_NONE
+
+     UUT:
+     manager.c:
+
+     Coverage:
+     None
+
+     UUTs & Stubs->Stub dependencies:
+     Custom, database (not stubbed)
+
+     Equivalent to environment MANA_NONE.
