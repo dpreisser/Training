@@ -1,53 +1,74 @@
-22) Excercise Test Case Building Module E
+Excercise Test Case Building Module E
 
-    control_flow.c
+  A) Environment:
+     CONTROL_FLOW_W
 
-    a) AreaTest:
+     UUT:
+     control_flow.c
 
-       <<GLOBAL>>
-       widthX = 2.0, lengthY = 3.0, heightZ = 3.0
+     Coverage:
+     Statement
 
-       computeBaseArea:
-       SHAPE = BOX
-       return == 6.0
+     UUTs & Stubs->Stub dependencies:
+     All
 
-    b) VolumeTest1:
 
-       Alt + Click: Drag AreaTest on computeVolume.
-       Rename to VolumeTest1.
+     1) Test Cases computBaseArea: 
 
-       computeVolume:
-       SHAPE = BOX
-       return == 24.0
+     	a) AreaTest:
 
-    c) VolumeTest2:
+	   control_flow:
+       	   <<GLOBAL>>
+       	   widthX = 2.0, lengthY = 3.0, heightZ = 3.0
 
-       Duplicate Test Case: VolumeTest1
+       	   computeBaseArea:
+       	   SHAPE = BOX
+       	   return == 6.0
 
-    d) 5_Partitions:
 
-       partitionExample:
+     2) Test Cases computeVolume:
 
-       Insert Partitioned Test Case.
-       Options->Number of data partitions: 5
+     	a) VolumeTest1:
 
-    e) 10_Partitions:
+       	   Alt + Click: Drag AreaTest on computeVolume.
+       	   Rename to VolumeTest1.
 
-       partitionExample:
+       	   computeVolume:
+       	   SHAPE = BOX
+       	   return == 24.0
 
-       Insert Partitioned Test Case.
-       Options->Number of data partitions: 10
+    	b) VolumeTest2:
 
-    f) Test_One:
+       	   Duplicate Test Case VolumeTest1.
+	   Rename to VolumeTest2.
 
-       controlFlowExample:
 
-       Edit Control Flow:
+     3) Test Cases partitionExample:
 
-       controlFlowExample
-       someExternaFunctionA
-       someExternaFunctionB
-       someExternaFunctionC
-       someExternaFunctionD
-       someExternaFunctionE
-       controlFlowExample
+     	a) 5_Partitions:
+
+       	   partitionExample:
+       	   Insert Partitioned Test Case.
+       	   Options->Number of data partitions: 5
+
+    	b) 10_Partitions:
+
+       	   partitionExample:
+       	   Insert Partitioned Test Case.
+       	   Options->Number of data partitions: 10
+
+
+      4) Test Cases controlFlowExample:
+
+      	 a) Test_One:
+
+       	    controlFlowExample:
+       	    Edit Control Flow:
+
+       	    controlFlowExample
+       	    someExternaFunctionA
+       	    someExternaFunctionB
+       	    someExternaFunctionC
+       	    someExternaFunctionD
+       	    someExternaFunctionE
+       	    controlFlowExample
