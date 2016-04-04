@@ -1,44 +1,79 @@
-15) Excercise Environment Building Errors
+Excercise Environment Building Errors
 
-    need_macro.c (SourceFiles/EnvironmentBuildingErrors)
+  A) Environment:
+     NEED_MACRO
 
-    Environment->Update Environment->Choose Compiler:
-    Add MAXIMUM_MEMORY_SIZE=100
+     UUT:
+     need_macro.c (SourceFiles/EnvironmentBuildingErrors)
 
-16) Excercise Environment Building Errors
+     Coverage:
+     None
 
-    need_include.c (SourceFiles/EnvironmentBuildingErrors)
+     UUTs & Stubs->Stub dependencies:
+     All
 
-    Environment->Update Environment->Locate Source Files:
-    Add Search1, Search2 (Search directories)
+     Environment->Update Environment->Choose Compiler:
+     Add MAXIMUM_MEMORY_SIZE=100
 
-17) Excercise Environment Building Errors
 
-    changes.c (SourceFiles/EnvironmentBuildingErrors)
-    changes_new.c
+  B) Environment:
+     NEED_INCLUDE
 
-    a) InitializeRecord.001
+     UUT:
+     need_include.c (SourceFiles/EnvironmentBuildingErrors)
 
-       IntitializeRecord:
+     Coverage:
+     None
 
-       StudentName = Tom, StudentId = 20
-       return.field1 == Tom, return.field2 == 20
+     UUTs & Stubs->Stub dependencies:
+     All
 
-       Test->Scripting->Export Script
-       Duplicate Test Case
+     Environment->Update Environment->Locate Source Files:
+     Add Search1, Search2 (Search directories)
 
-    b) InitializeRecord.002:
 
-       changes_new.c -> changes.c
-       Environment->Rebuild Environment
+  C) Environment:
+     CHANGES_W
 
-       Notice: Test Cases are marked as failed.
-       (Tools->Options->Execute: Strict test case importing
+     UUT:
+     changes.c (SourceFiles/EnvironmentBuildingErrors)
+     changes_new.c
 
-       Param1 = Tom, Param2 = 20
-       return.field1 == Tom, return.field2 == 20
+     Coverage:
+     None
 
-       Adjust InitializeRecord_001.tst.
-       Test->Scripting->Import Script
+     UUTs & Stubs->Stub dependencies:
+     All
 
-       Notice: Test Cases are marked as successfull.
+
+     1) Test Cases InitializeRecord:
+
+        a) InitializeRecord.001
+
+       	   IntitializeRecord:
+       	   StudentName = Tom, StudentId = 20
+       	   return.field1 == Tom, return.field2 == 20
+
+       	   Test->Scripting->Export Script
+
+    	b) InitializeRecord.002:
+
+       	   changes_new.c -> changes.c:
+	   StudentName -> Param1, StudentId -> Param2
+       	   Environment->Rebuild Environment
+
+       	   Test->Scripting->Import Script
+
+       	   Notice: Test Cases are marked as failed.
+       	   Tools->Options->Execute: Strict test case importing
+
+       	   Delete InitializeRecord.002.
+
+       	   Adjust InitializeRecord_001.tst:
+
+       	   Param1 = Tom, Param2 = 20
+       	   return.field1 == Tom, return.field2 == 20
+
+       	   Test->Scripting->Import Script
+
+       	   Notice: Test Cases are marked as successfull.

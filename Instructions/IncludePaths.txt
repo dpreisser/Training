@@ -1,54 +1,55 @@
-14) Excercise Include Paths
-    
-    vcast_time.c (SourceFiles/SearchPaths)
+Excercise Include Paths
 
-    a) Verfiy that it doesn't compile due to missing vcast_time.h.
+  A) Environment:
+     VCAST_TIME_W
 
-    b) time_add_seconds.001:
+     UUT:     
+     vcast_time.c (SourceFiles/SearchPaths)
 
-       Environment->Update Environment->Locate Source Files:
-       Add include directory (Search directory).
+     Coverage:
+     None
 
-       Options->Display global data after: Each range iteration
-
-       time_add_seconds:
-
-       start.mins = 59,59 start.secs = 59,59
-       seconds = 1,61
-
-       return.mins == 60,60
-       return.secs == 0,60
-
-    c) time_add_seconds.001:
-
-       Environment->Update Environment->Locate Source Files:
-       Add include directory (Type handled directory).
-
-       Environment->Update Environment->Choose UUT & Stubs:
-       Add invalid_time to Additional Stubs.
-
-       Options->Display global data after: Each range iteration
-
-       time_add_seconds:
-
-       start.mins = 59,59 start.secs = 59,59
-       seconds = 1,61
-
-       return.mins == 60,60
-       return.secs == 0,60
-
-    d) time_add_seconds.002:
-
-       Environment->Update Environment->Locate Source Files:
-       Add include directory (Library include directory).
-
-       time_add_seconds:
-
-       <<vcast_time.time_add_seconds.start>>.mins = 59;
-       <<vcast_time.time_add_seconds.start>>.secs = 59;
-       seconds = 1
-
-       {{ <<vcast_time.time_add_seconds.return>>.mins == 60 }}
-       {{ <<vcast_time.time_add_seconds.return>>.secs == 0 }}
+     UUTs & Stubs->Stub dependencies:
+     All
 
 
+     1) Test Cases time_add_seconds:
+
+     	a) time_add_seconds.001:
+
+	   Verfiy that it doesn't compile due to missing vcast_time.h.
+
+       	   Environment->Update Environment->Locate Source Files:
+       	   Add include directory (Search directory).
+
+       	   time_add_seconds:
+       	   start.mins = 59,59 start.secs = 59,59
+       	   seconds = 1,61
+       	   return.mins == 60,60
+       	   return.secs == 0,60
+
+    	b) time_add_seconds.001:
+
+       	   Environment->Update Environment->Locate Source Files:
+       	   Add include directory (Type handled directory).
+
+       	   Environment->Update Environment->Choose UUT & Stubs:
+       	   Add invalid_time to Additional Stubs.
+
+	   time_add_seconds:
+       	   start.mins = 59,59 start.secs = 59,59
+       	   seconds = 1,61
+       	   return.mins == 60,60
+       	   return.secs == 0,60
+
+    	c) time_add_seconds.002:
+
+       	   Environment->Update Environment->Locate Source Files:
+       	   Add include directory (Library include directory).
+
+       	   time_add_seconds:
+       	   <<vcast_time.time_add_seconds.start>>.mins = 59;
+       	   <<vcast_time.time_add_seconds.start>>.secs = 59;
+       	   seconds = 1
+       	   {{ <<vcast_time.time_add_seconds.return>>.mins == 60 }}
+       	   {{ <<vcast_time.time_add_seconds.return>>.secs == 0 }}

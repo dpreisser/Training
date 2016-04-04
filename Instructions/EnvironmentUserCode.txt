@@ -1,42 +1,57 @@
-11) Excercise Environment User Code
+Excercise Environment User Code
 
-    communication.c
+  A) Environment:
+     COMMUNICATION_W
 
-    Environment->User Code->Edit: User Globals
+     UUT:
+     communication.c
 
-    #include "communication.h"
+     Coverage:
+     Statement+Branch
 
-    VCAST_USER_GLOBALS_EXTERN AltCmdT AltCmd;
-    VCAST_USER_GLOBALS_EXTERN CourseCmdT CourseCmd;
+     UUTs & Stubs->Stub dependencies:
+     All
 
-    a) CHANGE_ALT:
+     Environment->User Code->Edit: User Globals:
 
-       AltCmd:	
-       newAltitude = 3000,41000
+     #include "communication.h"
 
-       ProcessMessage:
-       messageCategory = Change_Alt, message = AltCmd
-       return == True,False 
+     VCAST_USER_GLOBALS_EXTERN AltCmdT AltCmd;
+     VCAST_USER_GLOBALS_EXTERN CourseCmdT CourseCmd;
 
-    b) CHANGE_COURSE:
 
-       CourseCmd:
-       newCourse = 1.507,-1.507
+     1) Test Cases ProcessMessage:
 
-       ProcessMessage:
-       messageCategory = Change_Course, message = CourseCmd
-       return == True,False 
+     	a) CHANGE_ALT:
 
-    c) PlainMessage:
+	   <<GLOBAL>>:
+       	   AltCmd:	
+       	   newAltitude = 3000,41000
 
-       VECTORCAST_STR1 = Hallo Wowereit
+       	   ProcessMessage:
+       	   messageCategory = Change_Alt, message = AltCmd
+       	   return == True,False 
 
-       ProcessMessage:
-       messageCategory = Text_Message, message = VECTORCAST_STR1
-       return == True
+    	b) CHANGE_COURSE:
 
-    d) InvalidMessage:
+	   <<GLOBAL>>:
+       	   CourseCmd:
+       	   newCourse = 1.507,-1.507
 
-       ProcessMessage:
-       messageCategory = Invalid, message = VECTORCAST_STR1
-       return == True
+       	   ProcessMessage:
+       	   messageCategory = Change_Course, message = CourseCmd
+       	   return == True,False 
+
+    	c) PlainMessage:
+
+       	   VECTORCAST_STR1 = Hallo Wowereit
+
+       	   ProcessMessage:
+       	   messageCategory = Text_Message, message = VECTORCAST_STR1
+       	   return == True
+
+    	d) InvalidMessage:
+
+       	   ProcessMessage:
+       	   messageCategory = Invalid, message = VECTORCAST_STR1
+       	   return == True
