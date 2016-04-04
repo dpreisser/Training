@@ -1,19 +1,34 @@
-21) Excercise Create Tests from CSV files
+Excercise Create Tests from CSV files
 
-    line.c
+  A) Environment:
+     LINE_W
 
-    a) findY:
-       Generate CSV Map:
-       Use existing data file:
-       line.csv (SourceFiles/SupportFiles)
+     UUT:
+     line.c
 
-       Create Tests
+     Coverage:
+     Statement
 
-    b) findM:
-       Generate CSV Map:
-       Create template:
-       findM_Template.csv (SourceFiles/SupportFiles)
+     UUTs & Stubs->Stub dependencies:
+     All
 
-       Edit findM_Template.csv.
+     1) Test Cases findY:
+
+     	a) findY:
+       	   Generate CSV Map:
+       	   Use existing data file:
+       	   line.csv (SourceFiles/SupportFiles)
+
+       	   Create Tests
+
+
+     2) Test Cases findM:
+
+     	a) findM:
+       	   Generate CSV Map:
+       	   Create template:
+       	   findM_Template.csv (SourceFiles/SupportFiles)
+
+       	   Edit findM_Template.csv.
        
-       Create Tests
+	   Create Tests

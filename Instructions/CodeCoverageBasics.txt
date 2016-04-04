@@ -1,8 +1,18 @@
-5) Excercise Code Coverage Basics
+Excercise Code Coverage Basics
 
-   manager.c
+  A) Envitonment:
+     MANAGER_W
+     
+     UUT:
+     manager.c
 
-   This excercise uses Code Coverage to achieve 100%
-   code coverage for Place_Order and Add_Included_Dessert.
+     Coverage:
+     None first, Statement later
 
-   Will be shown with TestCaseBuildingModuleA.
+     UUTs & Stubs->Stub dependencies:
+     All
+
+     This excercise is about adding test cases to achieve 100%
+     code coverage for Place_Order and Add_Included_Dessert.
+
+     Will be shown with TestCaseBuildingModuleA.
