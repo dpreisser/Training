@@ -1,57 +1,98 @@
-12) Excercise Abstract Classes
+Excercises Abstract Classes and Templates
 
-    shape.cpp
+Excercise Abstract Classes
 
-    a) getX.001:
+  A) Environment
+     SHAPE_W
 
-       Shape Instance:
-       vcast_concrete_Shape::vcast_concrete_Shape( ... )
-       x = 2, y = 3
+     UUT:
+     shape.cpp
 
-       Shape::getX:
-       return == 2
+     Coverage:
+     Statement
 
-    b) getX.002:
+     UUTs & Stubs->Stub dependencies:
+     All
 
-       Shape Instance:
-       Rectangle::Rectangle( )
-       mX = 2, mY = 3
+     1) Test Cases getX:
 
-       Shape::getX:
-       return == 2
+     	a) getX.001:
 
-13) Excercise Templates
+	   shape:
+	   <<GLOBAL>>:
+       	   Shape Instance: vcast_concrete_Shape
+       	   vcast_concrete_Shape::vcast_concrete_Shape( ... )
+       	   x = 2, y = 3
 
-    stack.cpp
+       	   Shape::getX:
+       	   return == 2
 
-    a) Stack<float>::push.001:
+    	b) getX.002:
 
-       Stack<float> Instance:
-       Stack<float>::Stack( ... ):
-       maxSize = 10
-       mStackCout == 1, mMaxSize == 10
+	   shape:
+	   <<GLOBAL>>:
+       	   Shape Instance: Rectangle
+       	   Rectangle::Rectangle( )
+       	   mX = 2, mY = 3
 
-       Stack<float>::push:
-       item = 10.0
+       	   Shape::getX:
+       	   return == 2
 
-    b) Stack<int>::push.001:
 
-       Stack<int> Instance:
-       Stack<int>::Stack( ... ):
-       maxSize = 10
-       mStackCout == 1, mMaxSize == 10
+Excercise Templates
 
-       Stack<int>::push:
-       item = 10
+  B) Environment
+     STACK_W
 
-    c) Stack<int>::push.002:
+     UUT:
+     stack.cpp
 
-       Stack<int> Instance:
-       Stack<int>::Stack( ... ):
-       maxSize = 10
-       mStackCout == 1,2 mMaxSize == 10
+     Coverage:
+     Statement
 
-       Stack<int>::push:
-       item = 10,20
+     UUTs & Stubs->Stub dependencies:
+     All
 
-       Options->Display global data after: Each range iteration
+
+     1) Test Cases Stack<float>::push
+
+     	a) Stack<float>::push.001:
+
+       	stack:
+       	<<GLOBAL>>:
+       	Stack<float> Instance: Stack<float>
+       	Stack<float>::Stack( ... ):
+       	maxSize = 10
+       	mStackCout == 1, mMaxSize == 10
+
+       	Stack<float>::push:
+       	item = 10.0
+
+
+     2) Test Cases Stack<int>::push
+
+     	a) Stack<int>::push.001:
+
+       	   stack:
+       	   <<GLOBAL>>:
+       	   Stack<int> Instance: Stack<int>
+       	   Stack<int>::Stack( ... ):
+       	   maxSize = 10
+       	   mStackCout == 1, mMaxSize == 10
+
+       	   Stack<int>::push:
+       	   item = 10
+
+    	b) Stack<int>::push.002:
+
+       	   stack:
+       	   <<GLOBAL>>:
+       	   Stack<int> Instance:
+       	   Stack<int>::Stack( ... ):
+       	   maxSize = 10
+       	   mStackCout == 1,2 mMaxSize == 10
+
+       	   Stack<int>::push:
+	   item = 10,20
+
+       	   Options->Display global data after: Each range iteration
