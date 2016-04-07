@@ -1,0 +1,48 @@
+Overview Excercises
+
+
+Test Case Building Module A:
+
+     Files: manager.c
+
+     Purpose: First Test Case
+
+     Functions: Place_Order
+
+
+Test Case Building Module B:
+
+     Files: float_example.c
+
+     Purpose: Input of floats
+     	      Tolerances in expexted values
+	      Other values: <<MIN>>,<<MID>>,<<MAX>>, ...
+	      Cut & Paste to facilitate input to arrays
+
+     Functions: floatTest
+     		getOrder
+
+
+Test Case Building Module C:
+
+     Files: manager.c:
+
+     Purpose: Input of strings
+     	      String Display Mode, Character Display Mode
+	      Combination Testing
+
+     Functions: Add_Party_To_Waiting_List
+     		Place_Order
+
+
+Test Case Building Module D:
+
+     Files: dish_washer_fsm.c:
+
+     Purpose: Initialization tests
+     	      Compound tests
+
+     Functions: processIdleState
+     		processWashCycle
+		processRinseCycle
+		processDryCycle

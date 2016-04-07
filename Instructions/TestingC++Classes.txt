@@ -44,6 +44,10 @@ Excercise Testing C++ Classes
 
 	   Rectangle::Rectangle( ... )
       	   x = 2, y = 3, height = 4, width = 5
+
+	   combo:
+	   <<GLOBAL>>:
+	   Rectangle Instance: Rectangle
       	   mX == 2, mY == 3, mHeight == 4, mWidth == 5
 
 	   

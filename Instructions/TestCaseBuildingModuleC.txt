@@ -15,7 +15,7 @@ Excercise Test Case Building Module C
 
      1) Test Cases Add_Party_To_Waiting_List:
 
-     	a) Add_Party_To_Waiting_List.001:
+     	a) Representation_string
 
       	   Add_Party_To_Waiting_List:
       	   Name = Wowereit (string)
@@ -26,7 +26,7 @@ Excercise Test Case Building Module C
       	   WaitingList[0] == Wowereit
       	   WaitingListSize == 1
 
-   	b) Add_Party_To_Waiting_List.002:
+   	b) Representation_array_char_c:
 
       	   Add_Party_To_Waiting_List:
       	   Name = Wowereit (ptr, char[9])
@@ -38,7 +38,7 @@ Excercise Test Case Building Module C
       	   WaitingList[0] == Wowereit
       	   WaitingListSize == 1
 
-   	c) Add_Party_To_Waiting_List.003:
+   	c) Representation_array_char_n:
 
       	   Add_Party_To_Waiting_List:
 	   Name = Wowereit (ptr, char[9])
@@ -50,7 +50,7 @@ Excercise Test Case Building Module C
       	   WaitingList[0] == Wowereit
       	   WaitingListSize == 1
 
-   	d) Add_Party_To_Waiting_List.004:
+   	d) InputHandlingArrays:
 
       	   Add_Party_To_Waiting_List:
       	   Name = Wowereit,Platzeck (String)
@@ -64,7 +64,7 @@ Excercise Test Case Building Module C
       	   WaitingList[9] == Platzeck
       	   WaitingListSize == 10
 
-   	e) Add_Party_To_Waiting_List.005:
+   	e) DisplayGlobalDataAfter:
 
       	   Add_Party_To_Waiting_List:
 	   Name = Wowereit,Platzeck (String)

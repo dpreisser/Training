@@ -13,8 +13,75 @@ Excercise Test Case Building Module A
      UUTs & Stubs->Stub dependencies:
      All
 
+     Comments:
 
-     1) Test Cases Place_Order:
+     The only original test case which will be created with this excercise is MyTest.
+     It will still be used but only with emphasis on float input and tolerance settings
+     of expected results (parameter level, test case level and global level)
+
+     All other test cases address all sorts of aspects that will be taught in the modules
+     Test Case Building Moule A,B,C. 
+
+     1) Test Cases Add_Included_Dessert:
+
+     	a) Serial:
+
+	   Add_Included_Dessert:
+	   Order[0].Entree = CHICKEN
+
+	   Add_Included_Dessert:
+	   Order[0].Entree == CHICKEN
+	   return == 0
+
+	b) Range&List:
+
+	   Add_Included_Dessert:
+	   Order[0].Entree = NO_ENTREE..PASTA/1
+
+	   Add_Included_Dessert:
+	   Order[0].Entree == NO_ENTREE,STEAK,CHICKEN,LOBSTER,PASTA
+	   return == (5)0
+
+	c) Combination:
+
+	   Add_Included_Dessert:
+	   Order[0].Salad = NO_SALAD..GREEN/1
+	   Order[0].Entree = NO_ENTREE..PASTA/1
+
+	   Add_Included_Dessert:
+	   Order[0].Salad == NO_SALAD..GREEN
+	   Order[0].Entree == NO_ENTREE..PASTA
+	   return == (15)0
+
+	   Options: Combination Testing
+
+	   !!! Attention:
+	   Attention with a range in expected values:
+	   It is really addressing a range which means
+	   any actual value within this range is a match
+	   and not just an abbreviated way of writing a list.
+	  
+	   Demonstrate by switching to:
+	   Order[0].Salad == NO_SALAD,CAESAR,GREEN
+
+	d) Coverage:
+
+	   Add_Included_Dessert:
+	   Order[0].Salad = NO_SALAD,CAESAR,GREEN
+	   Order[0].Entree = NO_ENTREE,STEAK,LOBSTER
+	   Order[0].Beverage = NO_BEVERAGE,MIXED_DRINK,WINE
+
+	   Add_Included_Dessert:
+	   Order[0].Dessert = NO_DESSERT,PIE,CAKE
+	   return == 0,1,2
+
+     
+     2) Test Cases Add_Party_To_Waiting_List:
+
+     	See TestCaseBuildingModuleC.
+
+
+     3) Test Cases Place_Order:
 
      	a) MyTest:
 
@@ -32,7 +99,21 @@ Excercise Test Case Building Module A
 
       	   Purpose: First Unit Test for Place_Order.
 
-     	b) Cov_Place_Order:
+     	b) Tolerance:
+
+	   Stubbed:
+
+      	   Update_Table_Record:
+      	   Table == 1, check_total == 9.0+/-1.5
+	   Order[0].Entree == Chicken
+
+      	   Place_Order:
+      	   Table = 1, Seat = 0
+	   Order.Entree = Chicken
+
+      	   Purpose: Show tolerance notation.
+
+     	c) Cov_Place_Order:
 
      	   Stubbed:
 
@@ -45,7 +126,7 @@ Excercise Test Case Building Module A
 
       	   Purpose: Code coverage of Place_Order.
 
-     	c) Cov_Place_Dessert:
+     	d) Cov_Place_Dessert:
 
      	   Stubbed:
 
@@ -60,25 +141,47 @@ Excercise Test Case Building Module A
 
       	   Purpose: Coverage of Add_Included_Dessert and of Place_Order.
 
-     	 d) FoolTheBill:
+     	e) FoolTheBill:
 
-      	    Enable SBF for Add_Included_Dessert.
+      	   Enable SBF for Add_Included_Dessert.
 
-	    Stubbed:
+	   Stubbed:
 
-      	    Add_Included_Dessert:
-      	    Order[0].Entree = Lobster
+      	   Add_Included_Dessert:
+      	   Order[0].Entree = Lobster
 
-      	    Update_Table_Record:
-      	    Table == 1, check_total == 10.0
-	    Order[0].Entree == Lobster
+      	   Update_Table_Record:
+      	   Table == 1, check_total == 10.0
+	   Order[0].Entree == Lobster
 
-      	    Place_Order:
-      	    Table = 1, Seat = 0
-	    Order.Entree = Chicken
+      	   Place_Order:
+      	   Table = 1, Seat = 0
+	   Order.Entree = Chicken
 
-	    Purpose: Get the lobster for the price of a chicken.
-	    Problem with data consistency in code.
+	   Purpose: Get the lobster for the price of a chicken.
+	   Problem with data consistency in code.
+
+    	f) FoolTheBill_ReturnDataListOptions:
+
+      	   Enable SBF for Add_Included_Dessert.
+
+	   Stubbed:
+
+      	   Add_Included_Dessert:
+      	   Order[0].Entree = NO_ENTREE..PASTA/1
+
+      	   Update_Table_Record:
+      	   Table == 1, check_total == 10.0
+	   Order[0].Entree == NO_ENTREE,STEAK,CHICKEN,LOBSTER,PASTA
+
+      	   Place_Order:
+      	   Table = 1, Seat = 0
+	   Order.Entree = (5)CHICKEN
+
+	   Options->Return Data List Options:
+	   Multi-return spans range iterations
+
+	   Purpose: Get any meal for the price of a chicken.
 
 
   B) Environment:

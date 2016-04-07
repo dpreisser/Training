@@ -53,6 +53,11 @@ Excercise Templates
      UUTs & Stubs->Stub dependencies:
      All
 
+     Unit Appendix User Code:
+
+     Stack<int> myStack(10);
+     template class Stack<float>;
+
 
      1) Test Cases Stack<float>::push
 
