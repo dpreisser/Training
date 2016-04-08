@@ -68,6 +68,10 @@ Excercise Templates
        	Stack<float> Instance: Stack<float>
        	Stack<float>::Stack( ... ):
        	maxSize = 10
+
+       	stack:
+       	<<GLOBAL>>:
+       	Stack<float> Instance: Stack<float>
        	mStackCout == 1, mMaxSize == 10
 
        	Stack<float>::push:
@@ -83,6 +87,10 @@ Excercise Templates
        	   Stack<int> Instance: Stack<int>
        	   Stack<int>::Stack( ... ):
        	   maxSize = 10
+
+       	   stack:
+       	   <<GLOBAL>>:
+       	   Stack<int> Instance: Stack<int>
        	   mStackCout == 1, mMaxSize == 10
 
        	   Stack<int>::push:
@@ -92,9 +100,13 @@ Excercise Templates
 
        	   stack:
        	   <<GLOBAL>>:
-       	   Stack<int> Instance:
+       	   Stack<int> Instance: Stack<int>
        	   Stack<int>::Stack( ... ):
        	   maxSize = 10
+
+       	   stack:
+       	   <<GLOBAL>>:
+       	   Stack<int> Instance: Stack<int>
        	   mStackCout == 1,2 mMaxSize == 10
 
        	   Stack<int>::push:
