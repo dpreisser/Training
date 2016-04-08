@@ -16,7 +16,7 @@ Excercise Abstract Classes
 
      1) Test Cases getX:
 
-     	a) getX.001:
+     	a) Normal:
 
 	   shape:
 	   <<GLOBAL>>:
@@ -32,7 +32,7 @@ Excercise Abstract Classes
 	   shape:
 	   <<GLOBAL>>:
        	   Shape Instance: Rectangle
-       	   Rectangle::Rectangle( )
+       	   Rectangle::Rectangle()
        	   mX = 2, mY = 3
 
        	   Shape::getX:

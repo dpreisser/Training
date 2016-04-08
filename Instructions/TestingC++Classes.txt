@@ -5,7 +5,7 @@ Excercise Testing C++ Classes
 
      UUT:
      combo.cpp
-     shapes.cpp
+     shape.cpp
 
      Coverage:
      Statement
@@ -16,13 +16,21 @@ Excercise Testing C++ Classes
 
      1) Initialization Tests:
 
-     	a) <<INIT>>.001:
+     	a) Normal:
 	   
 	   combo:
       	   <<GLOBAL>>:
       	   Rectangle Instance: Rectangle
       	   Rectangle::Rectangle( ... )
       	   x = 2, y = 3, height = 4, width = 5
+
+     	a) Default:
+	   
+	   combo:
+      	   <<GLOBAL>>:
+      	   Rectangle Instance: Rectangle
+      	   Rectangle::Rectangle()
+      	   mX = 2, mY = 3, mHeight = 4, mWidth = 5
 
 
      2) Compound Tests:
@@ -105,3 +113,45 @@ Excercise Testing C++ Classes
 
 	   Rectangle::getY:
       	   return == 3
+
+
+  B) Environment:
+     SHAPE_2_W
+
+     UUT:
+     combo.cpp
+
+     Coverage:
+     Statement
+
+     UUTs & Stubs->Stub dependencies:
+     All
+
+     Notice that Shape is not a UUT and thus
+     all functions defined in shape.cpp are stubbed.
+     Especially the constructors which are used to
+     construct instances of Rectangle or Square.
+
+
+     1) Test Cases Rectangle::getArea:
+
+   	a) Normal:
+
+	   combo:
+      	   <<GLOBAL>>:
+      	   Rectangle Instance: Rectangle
+      	   Rectangle::Rectangle( ... )
+      	   x = 2, y = 3, height = 4, width = 5
+
+	   combo:
+      	   <<GLOBAL>>:
+      	   Rectangle Instance: Rectangle
+      	   mX == 2, mY == 3, mHeight == 4, mWidth == 5
+
+	   Rectangle::getArea:
+      	   return == 20.0
+
+	   Environment->Configure Stubs->Edit:
+	   Stubbed Subprograms: Shape.h: Shape::Shape( ... ):
+	   this->mX = 2;
+	   this->mY = 3;
