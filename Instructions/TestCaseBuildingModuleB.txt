@@ -55,19 +55,19 @@ Excercise Test Case Building B
 
       	   <<GLOBAL>>:
 	   OrderArray[0].Soup = NO_SOUP
-	   OrderArray[0].Salad = Caesar
-      	   OrderArray[0].Entree = Steak
-	   OrderArray[0].Beverage = Mixed_Drink
+	   OrderArray[0].Salad = CAESAR
+      	   OrderArray[0].Entree = STEAK
+	   OrderArray[0].Beverage = MIXED_DRINK
 	
-	   OrderArray[1].Entree = Chicken
-      	   OrderArray[2].Entree = Lobster
-      	   OrderArray[3].Entree = Pasta
+	   OrderArray[1].Entree = CHICKEN
+      	   OrderArray[2].Entree = LOBSTER
+      	   OrderArray[3].Entree = PASTA
 
 	   Remainder stays the same. Cut & Paste.
 
       	   getOrder:
       	   index = 0..3/1
-      	   return.Soup == No_Soup
-      	   return.Salad == Caesar
-      	   return.Entree == Steak..Pasta/1
-      	   return.Beverage == Mixed_Drink
+      	   return.Soup == NO_SOUP
+      	   return.Salad == CAESAR
+      	   return.Entree == STEAK..PASTA/1
+      	   return.Beverage == MIXED_DRINK
