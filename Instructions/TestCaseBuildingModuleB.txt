@@ -69,5 +69,5 @@ Excercise Test Case Building B
       	   index = 0..3/1
       	   return.Soup == NO_SOUP
       	   return.Salad == CAESAR
-      	   return.Entree == STEAK..PASTA/1
+      	   return.Entree == STEAK,CHICKEN,LOBSTER,PASTA
       	   return.Beverage == MIXED_DRINK

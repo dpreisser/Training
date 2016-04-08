@@ -7,7 +7,7 @@ Excercise Test Case Building Module D
      dishwasher_fsm.c  
 
      Coverage:
-     Statement
+     Statement+MCDC
 
      UUTs & Stubs->Stub dependencies:
      All
@@ -93,7 +93,7 @@ Excercise Test Case Building Module D
      dishwasher_fsm.c  
 
      Coverage:
-     Statement
+     Statement+MCDC
 
      UUTs & Stubs->Stub dependencies:
      All
