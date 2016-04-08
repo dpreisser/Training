@@ -80,6 +80,19 @@ Excercise Test Case Building Module C
 
       	   Options->Display global data after: Each Range Iteration
 
+	f) Coverage:
+
+      	   Add_Party_To_Waiting_List:
+	   Name = Platzeck (String)
+
+	   manager:
+      	   <<GLOBAL>>:
+      	   WaitingList[0..9] = Wowereit
+      	   WaitingListSize = 10
+
+      	   WaitingList[0] == Platzeck
+      	   WaitingListSize == 1
+
 
         2) Test Cases Place_Order:
 
