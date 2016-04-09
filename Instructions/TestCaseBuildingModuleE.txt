@@ -18,8 +18,8 @@ Excercise Test Case Building Module E
      	a) AreaTest:
 
 	   control_flow:
-       	   <<GLOBAL>>
-       	   widthX = 2.0, lengthY = 3.0, heightZ = 3.0
+       	   <<GLOBAL>>:
+       	   widthX = 2.0, lengthY = 3.0, heightZ = 4.0
 
        	   computeBaseArea:
        	   SHAPE = BOX
@@ -63,6 +63,7 @@ Excercise Test Case Building Module E
       	 a) Test_One:
 
        	    controlFlowExample:
+
        	    Edit Control Flow:
 
        	    controlFlowExample
