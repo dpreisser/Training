@@ -17,7 +17,7 @@ Excercise Library Stubbing
 
      1) Test Cases use_malloc:
 
-     	Environment->Update Environment->UUts & Stubs:
+     	Environment->Update Environment->UUTs & Stubs:
      	malloc (Library stubs)
 
      	a) Stub:
@@ -31,8 +31,8 @@ Excercise Library Stubbing
 
     	b) Real:
 
-       	use_malloc:
-       	return == ok
+       	   use_malloc:
+       	   return == ok
 
 
 Excercise Additional Stubs
@@ -69,7 +69,8 @@ Excercise Additional Stubs
 
     	c) Stub_Return_0,1:
 
-       	   Options->Return Data List Options: Multi-return spans range iterations
+       	   Options->Return Data List Options:
+	   Multi-return spans range iterations
 
        	   Stubbed:
        	   myFunction:
@@ -126,7 +127,8 @@ Excercise Return Data List Options
 
      	b) Range:
 
-     	   Options->Data List Options: Multi-return spans range iterations
+     	   Options->Data List Options:
+	   Multi-return spans range iterations
 
      	   Stubbed:
      	   airportBarometer:
