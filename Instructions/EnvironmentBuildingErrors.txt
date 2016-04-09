@@ -15,6 +15,24 @@ Excercise Environment Building Errors
      Environment->Update Environment->Choose Compiler:
      Add MAXIMUM_MEMORY_SIZE=100
 
+     
+     1) InitializeMemory:
+
+     	a) InitializeMemory.001:
+
+	   need_macro:
+	   <GLOBAL>>:
+	   Memory:
+	   <<alloc 100>>
+
+	   {{ need_macro.<<GLOBAL>>.Memory>>[0] == -1 }}
+
+     	b) InitializeMemory.002:
+
+	   <<need_macro.<<GLOBAL>>.Memory>> = (int *) malloc( MAXIMUM_MEMORY_SIZE*sizeof(int) );
+
+	   {{ need_macro.<<GLOBAL>>.Memory>>[0] == -1 }}
+
 
   B) Environment:
      NEED_INCLUDE
@@ -30,6 +48,19 @@ Excercise Environment Building Errors
 
      Environment->Update Environment->Locate Source Files:
      Add Search1, Search2 (Search directories)
+
+
+     1) TestCases functionToTest:
+
+     	a) functionToTest.001:
+
+	   funtionToTest:
+	   parameter.fielda = 1
+	   parameter.fieldb = 2
+ 
+	   funtionToTest:
+	   return.field1 == 2.0
+	   return.field2 == 1.0
 
 
   C) Environment:

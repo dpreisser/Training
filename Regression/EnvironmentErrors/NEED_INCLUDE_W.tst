@@ -1,0 +1,34 @@
+-- VectorCAST 6.4d (02/29/16)
+-- Test Case Script
+-- 
+-- Environment    : NEED_INCLUDE_W
+-- Unit(s) Under Test: need_include
+-- 
+-- Script Features
+TEST.SCRIPT_FEATURE:C_DIRECT_ARRAY_INDEXING
+TEST.SCRIPT_FEATURE:CPP_CLASS_OBJECT_REVISION
+TEST.SCRIPT_FEATURE:MULTIPLE_UUT_SUPPORT
+TEST.SCRIPT_FEATURE:MIXED_CASE_NAMES
+TEST.SCRIPT_FEATURE:STANDARD_SPACING_R2
+TEST.SCRIPT_FEATURE:OVERLOADED_CONST_SUPPORT
+TEST.SCRIPT_FEATURE:UNDERSCORE_NULLPTR
+TEST.SCRIPT_FEATURE:FULL_PARAMETER_TYPES
+TEST.SCRIPT_FEATURE:STATIC_HEADER_FUNCS_IN_UUTS
+--
+
+-- Test Case: functionToTest.001
+TEST.UNIT:need_include
+TEST.SUBPROGRAM:functionToTest
+TEST.NEW
+TEST.NAME:functionToTest.001
+TEST.NOTES:
+Author:
+Date:
+Version:
+Requirement:
+TEST.END_NOTES:
+TEST.VALUE:need_include.functionToTest.parameter.fielda:1
+TEST.VALUE:need_include.functionToTest.parameter.fieldb:2
+TEST.EXPECTED:need_include.functionToTest.return.field1:2.0
+TEST.EXPECTED:need_include.functionToTest.return.field2:1.0
+TEST.END
