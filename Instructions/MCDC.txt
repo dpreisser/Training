@@ -55,6 +55,17 @@
 
 	Show difference in code coverage if this option is on.
 
+     b) Complete:
+     		
+	LogicalInAssignment_Example:
+	a = 1,1,1,0
+	b = 1,1,0,0
+	c = 1,0,0,0
+	return == 1,0,0,0
+
+	100% MC/DC can't be achieved.
+	Show coverage by analysis (CBA).
+
 
   3) Test Cases LogicalFunctionCall_Example:
 
@@ -73,7 +84,23 @@
      	Instrument logical operations in function calls
 
 	Show difference in code coverage if this option is on.
-	
+
+     b) Complete:
+
+     	Stubbed:
+	foo:
+	x == 1,0,0,0
+	return = 1,0,0,0
+
+	Otions->Return Data List Options:
+	Multi-return spans range iterations
+
+     	LogicalFunctionCall_Example:
+	a = 1,1,1,0
+	b = 1,1,0,0
+	c = 1,0,0,0
+	return == 1,0,0,0
+
 
   4) Test Cases LargeCondition1:
 
