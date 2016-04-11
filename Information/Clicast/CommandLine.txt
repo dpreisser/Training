@@ -1,0 +1,79 @@
+
+1) Regression Testing:
+
+   All in one go:
+
+   EnvName.bat
+
+   or:
+
+   %vectorcast_dir%\clicast -lc tools execute commands.tmp false
+
+   or:
+
+   %vectorcast_dir%\clicast -lc environment build EnvName.env
+   %vectorcast_dir%\clicast -e EnvName tools script run EnvName.tst
+   %vectorcast_dir%\clicast -e EnvName execute batch
+   %vectorcast_dir%\clicast -e EnvName reports custom management EnvName_management_report.html
+
+
+2) Manage:
+
+   Ceate a project:
+   %VECTORCAST_DIR%\manage --project=MyProject --create
+
+   Access to write lock: 
+   %VECTORCAST_DIR%\manage --project=MyProject --release-locks
+
+   Ceate a group:
+   %VECTORCAST_DIR%\manage --project=MyProject --group=MyGroup --create
+
+   Import Files (environments):
+   %VECTORCAST_DIR%\manage --project=MyProject --group=MyGroup --import "MyImportFile"
+
+   Adding test suite MyTestSuite:
+
+   a) %VECTORCAST_DIR%\manage 
+      --project=MyProject (Test_Campaign)
+      --source=MySource (Source_1)
+      --platform=MyPlatform (Windows)
+      --compiler=MyCompiler (VectorCAST_MinGW_C++)
+      --testsuite=MyTestSuite (Configuration_01) 
+      ¡V-create
+
+   b) %VECTORCAST_DIR%\manage
+      --project=MyProject
+      --level=MySource/MyPlatform/MyCompiler/MyTestSuite
+      --create
+
+   Adding group MyGroup to MyTestSuite:
+
+   %VECTORCAST_DIR%\manage
+   --project=MyProject
+   --level=MySource/MyPlatform/MyCompiler/MyTestSuite
+   --add=MyGroup
+
+   Run a script. Project must exist:
+   %VECTORCAST_DIR%\manage --project=MyProject --script=MyScript [--continue-on-error]
+
+   Example myScript:
+
+   --level Source/Windows/GNU_C_41/SUITE --create
+   --group GROUP --create
+   --level Source/Windows/GNU_C_41/SUITE --add GROUP
+   --import ENV
+   --group GROUP --add ENV
+   --migrate-to-workspace
+   --build-execute
+   --full-status
+   
+   Fully build or rebuild environments and then execute all tests
+   %VECTORCAST_DIR%\manage --project=MyProject --build-execute --workspace=MyFolder
+ 
+   Store the status in project database
+   %VECTORCAST_DIR%\manage --project=MyProject --store-status
+ 
+   Generate HTML reports with full status of each environment in project
+   %VECTORCAST_DIR%\manage --project=MyProject --full-status=MyReportName --output=MyFolder
+
+   %VECTORCAST_DIR%\manage -p MyProject --create-report=<aggregate|metrics|environment> [--output=MyOutputFile] [--source-file=MySourceFile]

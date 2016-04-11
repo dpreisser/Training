@@ -1,0 +1,29 @@
+
+1) Regression Testing:
+
+   All in one go:
+
+   EnvName.bat
+
+   or:
+
+   %vectorcast_dir%\clicast -lc tools execute commands.tmp false
+
+   or:
+
+   %vectorcast_dir%\clicast -lc environment build EnvName.env
+   %vectorcast_dir%\clicast -e EnvName tools script run EnvName.tst
+   %vectorcast_dir%\clicast -e EnvName execute batch
+   %vectorcast_dir%\clicast -e EnvName reports custom management EnvName_management_report.html
+
+
+2) Manage:
+
+   REM Line 3: Fully build or rebuild environments and then execute all tests
+   %VECTORCAST_DIR%\manage --project=Test_Campaign --build-execute --workspace=S:\Test_Campaign\build
+ 
+   REM Line 4: Store the status in project database
+   %VECTORCAST_DIR%\manage -¡Vproject=Test_Campaign --store-status
+ 
+   REM Line 5: Generate HTML reports with full status of each environment in project
+   %VECTORCAST_DIR%\manage --project=Test_Campaign --full-status=%FULL_REPORT_NAME% --output=%SharedLocationForReports%
